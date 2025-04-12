@@ -1,0 +1,19 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #1f1f1f;
+    color: #fff;
+    flex-direction: row;
+}
+
+.logo{
+    margin: 0;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
