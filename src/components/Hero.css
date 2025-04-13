@@ -61,9 +61,14 @@
       padding-top: 7rem;
       padding-bottom: 9rem;
     }
+    .content h2{
+        text-align: center;   
+      }
     .content{
-      text-align: start;
-      width: 90%;
+        
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
     .hero-subtitle {
       font-size: 2rem;
