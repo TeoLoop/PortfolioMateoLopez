@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 
-import logo from '../assets/logo2.jpg';
+import logo from '../assets/FP.jpg';
 import verified from '../assets/verificada-48.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
