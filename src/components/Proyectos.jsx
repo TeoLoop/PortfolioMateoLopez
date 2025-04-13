@@ -7,7 +7,7 @@ export const Proyectos = () => {
   const [proyectos, setProyectos] = useState([]);
 
   useEffect(() => {
-    fetch('https://api-proyectos-production.up.railway.app/api/projects')
+    fetch('https://api-proyectos-k0df.onrender.com/api/projects')
       .then((res) => res.json())
       .then((data) => setProyectos(data))
       .catch((err) => console.error('Error cargando proyectos:', err));
