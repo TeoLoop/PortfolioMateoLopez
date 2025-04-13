@@ -5,7 +5,7 @@
     justify-content: center;      /*esto centra verticalmente */
     background-color: #121212;
     color: #f0f0f0;
-    height: 50vh;                /* ocupar toda la pantalla */
+    height: 60vh;                /* ocupar toda la pantalla */
 
   }
   
@@ -24,7 +24,7 @@
 .hero-subtitle{
     margin: 0;
     font-size: 3rem;
-    font-family: Noe Display, Georgia, Times, serif;;
+    font-family: Noe Display, Georgia, Times, serif;
 }
 
 .hero-p{
