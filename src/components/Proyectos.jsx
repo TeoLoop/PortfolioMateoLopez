@@ -26,7 +26,6 @@ export const Proyectos = () => {
                 <span key={`${p.id}-${tec}`} className='tech-tag'>{tec.trim()}</span>
               ))}
             </div>
-            <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a>
             
             {p.imageUrls && p.imageUrls.length > 0 && (
               <Carousel showThumbs={false} showStatus={false} infiniteLoop className="carousel">
@@ -37,6 +36,7 @@ export const Proyectos = () => {
                 ))}
               </Carousel>
             )}
+            <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a>
           </div>
         ))}
       </div>
