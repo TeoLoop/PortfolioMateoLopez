@@ -11,7 +11,8 @@
   
   .content {
     text-align: justify;
-    max-width: 800px;             /* opcional, para que no se estire tanto en pantallas grandes */
+    width: 80vh;
+
   }
 
 .hero-title{
@@ -43,4 +44,26 @@
 
 .hero-button:hover{
     background-color: #00c785;
+}
+
+@media (max-width: 890px){
+    .content{
+        margin: 15px;
+        width: 60vh;
+      }
+    .content h2{
+        text-align: start;   
+      }
+
+}
+
+@media (max-width: 590px){
+    .hero{
+        padding-top: 7rem;
+        padding-bottom: 9rem;
+    }
+    .content{
+        text-align: center;
+        width: 30vh;
+      }
 }
