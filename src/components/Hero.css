@@ -11,8 +11,8 @@
   
   .content {
     text-align: justify;
-    width: 80vh;
-
+    width: 80%;
+    max-width: 800px;
   }
 
 .hero-title{
@@ -46,24 +46,33 @@
     background-color: #00c785;
 }
 
-@media (max-width: 890px){
+@media (max-width: 905px){
     .content{
-        margin: 15px;
-        width: 60vh;
-      }
+      margin: 15px;
+      width: 90%;
+    }
     .content h2{
-        text-align: start;   
-      }
-
-}
-
-@media (max-width: 590px){
+      text-align: start;   
+    }
+  }
+  
+  @media (max-width: 590px){
     .hero{
-        padding-top: 7rem;
-        padding-bottom: 9rem;
+      padding-top: 7rem;
+      padding-bottom: 9rem;
     }
     .content{
-        text-align: center;
-        width: 30vh;
-      }
-}
+      text-align: center;
+      width: 90%;
+    }
+    .hero-subtitle {
+      font-size: 2rem;
+    }
+    .hero-title {
+      font-size: 1rem;
+    }
+    .hero-p {
+      font-size: 1rem;
+    }
+  }
+  

@@ -15,8 +15,8 @@ export const Navbar = () => {
     <nav className='nav'>
       <div className='container-logo'>
         <img src={logo} alt="Mi Logo" className='logo' />
-        <h1 className='logo-title'>Mateo Lopez - Professional Developer <img src={verified} alt="logo de verificado" className='verified' /></h1>
-        
+        <h1 className='logo-title'>Mateo Lopez - Professional Developer</h1>
+        <img src={verified} alt="logo de verificado" className='verified' />
       </div>
 
       <div className={`nav-list ${menuOpen ? 'open' : ''}`}>
