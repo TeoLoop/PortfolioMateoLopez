@@ -14,7 +14,7 @@ export const Navbar = () => {
   return (
     <nav className='nav'>
       <div className='container-logo'>
-        <img src={logo} alt="Mi Logo" className='logo' />
+        <a href=""><img src={logo} alt="Mi Logo" className='logo' /></a>
         <h1 className='logo-title'>Mateo Lopez - Professional Developer</h1>
         <img src={verified} alt="logo de verificado" className='verified' />
       </div>
