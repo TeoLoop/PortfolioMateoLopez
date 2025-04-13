@@ -1,6 +1,13 @@
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: montserrat;
   background-color: #0d0d0d; /* Fondo negro */
   color: #f0f0f0; /* Texto claro */
 }

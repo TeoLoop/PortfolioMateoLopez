@@ -1,19 +1,51 @@
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 1rem 2rem;
     background-color: #1f1f1f;
     color: #fff;
     flex-direction: row;
+    align-items: center;
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
+    
 }
 
 .logo{
     margin: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-title{
+    margin-left: 1rem;
+}
+
+.verified{
+    
+    width: 18px;
+    height: 18px;
+    margin-left: 1rem;
+    margin-top: 8px;
 }
 
 .nav-list{
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    
+}
+.nav-list li{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.nav-list li:hover{
+    color: #c0c0c0;
 }

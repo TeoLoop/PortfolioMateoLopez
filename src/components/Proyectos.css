@@ -1,62 +1,121 @@
-.proyectos{
+.proyectos {
     padding: 4rem 2rem;
     background-color: #0d0d0d;
     color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.proyectos-title{
+.proyectos-title {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.proyecto-grid{
-    display: grid;
-    grid-template-columns: repeat(autfit, mimax(280px, 1fr));
-    gap: 2rem;
-}
-
-.proyecto-card{
-    background-color: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 223, 154, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.proyecto-card:hover{
-    transform: translateY(-5px);
-}
-
-.proyecto-card h3{
-    margin-top: 0;
-    font-size: 1.3rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
     color: #00df9a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.proyecto-card p{
-    margin: .5rem 0 1rem;
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    gap: 2rem;
+    max-width: 1000px;
+    /* límite de ancho */
+    margin: 0 auto;
+    /* centrado horizontal */
+    padding: 0 1rem;
+    /* espaciado lateral */
 }
 
-.tecnologia{
+.proyecto-card {
+    background: linear-gradient(145deg, #1e1e1e, #121212);
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #1f1f1f;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 12px 35px rgba(0, 223, 154, 0.2);
+}
+
+.proyecto-card h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #00df9a;
+    margin-bottom: 0.5rem;
+}
+
+.proyecto-card p {
+    margin: 0.5rem 0 1rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.tecnologias {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    cursor: crosshair;
 }
 
-.tech-tag{
+.tech-tag {
     background-color: #2a2a2a;
-    padding: .3rem .6rem;
-    border-radius: 6px;
-    font-size: .8rem;
-    color: #ccc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #f0f0f0;
+    transition: background-color 0.2s;
 }
 
-.ver-mas{
+.tech-tag:hover {
+    background-color: #00df9a;
+    color: #000;
+}
+
+.proyecto-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 1rem;
+    object-fit: cover;
+    max-height: 200px;
+    box-shadow: 0 0 15px rgba(0, 223, 154, 0.15);
+}
+
+.ver-mas {
     display: inline-block;
-    margin-top: auto;
+    margin-top: 1.5rem;
     color: #00df9a;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
+    transition: color 0.2s;
+}
+
+.ver-mas:hover {
+    color: #00c785;
+}
+
+/* Carrusel - ajusta el tamaño y aspecto de las imágenes */
+.carousel .slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Evita que el carrusel se estire demasiado */
+.carousel {
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
 }
