@@ -1,50 +1,81 @@
 .contacto {
-    padding: 3rem 2rem;
-    text-align: center;
-    background-color: #0d0d0d;
-    color: #f0f0f0;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+}
+
+.contacto form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contacto textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.contacto button {
+  background-color: #00df9a;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0d0d0d;
+  transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+  background-color: #00b87f;
+}
+
+.mensaje-exito {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #00b87f;
+  /* Verde suave que combina bien con temas oscuros */
+  color: #000;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Clase para ocultarlo suavemente */
+.mensaje-exito.oculto {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
-  
-  .contacto form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+
+  80% {
+    opacity: 1;
   }
-  
-  .contacto input,
-  .contacto textarea {
-    padding: 0.8rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+
+  100% {
+    opacity: 0;
+    display: none;
   }
-  
-  .contacto textarea {
-    resize: none;
-    min-height: 120px;
-  }
-  
-  .contacto button {
-    background-color: #00df9a;
-    border: none;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #0d0d0d;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contacto button:hover {
-    background-color: #00b87f;
-  }
-  
-  .mensaje-exito {
-    margin-top: 1rem;
-    color: #00df9a;
-    font-weight: bold;
-  }
-  
+}
