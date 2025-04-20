@@ -1,105 +1,166 @@
+/* Navbar Styles */
 .nav {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 2rem;
-    background-color: #1f1f1f;
-    color: #fff;
-    align-items: center;
-    position: relative;
-    z-index: 1000;
-  }
-  
-  .container-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .logo-title {
-    margin-left: 1rem;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    gap: 0.3rem;
-  }
-  
-  .verified {
-    width: 18px;
-    height: 18px;
-    margin-left: 0.5rem;
-  }
-  
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f; /* Color para el modo oscuro */
+  color: #fff;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav.light {
+  background-color: #ffffff; /* Color para el modo claro */
+  color: #000; /* Color de texto para el modo claro */
+}
+
+/* Logo y verificación */
+.container-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-title {
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 0.3rem;
+}
+
+.verified {
+  width: 18px;
+  height: 18px;
+  margin-left: 0.5rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center; /* Asegura que todos los elementos de la lista estén alineados */
+}
+
+.nav-list li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-list li:hover {
+  color: #c0c0c0;
+}
+
+.nav-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsive */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  margin-top: 7px;
+}
+
+/* Cambio de fondo y color de texto en el tema claro */
+.menu-icon.light {
+  color: #000; /* Color del ícono en modo claro */
+}
+
+@media (max-width: 768px) {
   .nav-list {
-    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1f1f1f;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    display: none;
+  }
+
+  .nav-list.open {
     display: flex;
-    gap: 1.5rem;
-  }
-  
-  .nav-list li {
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-list li:hover {
-    color: #c0c0c0;
-  }
-  
-  .nav-list a {
-    color: inherit;
-    text-decoration: none;
   }
 
   .menu-icon {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #fff;
-    margin-top: 7px;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .nav-list {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: #1f1f1f;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem 0;
-      gap: 1rem;
-      display: none;
-    }
-  
-    .nav-list.open {
-      display: flex;
-    }
-  
-    .menu-icon {
-      display: block;
-    }
+    display: block;
   }
 
-  @media (max-width: 530px) {
-    .logo-title {
-      font-size: 0.9rem;
-      flex-direction: column;
-      align-items: flex-start;
-      white-space: normal;
-      gap: 0.2rem;
-    }
-  
-    .verified {
-      display: none;
-    }
+  /* Asegurar que el texto y los íconos del menú hamburguesa sean visibles */
+  .nav.light .nav-list {
+    background-color: #ffffff; /* Fondo blanco para el menú hamburguesa en modo claro */
   }
-  
+
+  .nav.light .nav-list li a {
+    color: #000; /* Asegurar que el texto sea negro en modo claro */
+  }
+
+  .nav.light .menu-icon {
+    color: #000; /* Cambiar el color del ícono a negro en modo claro */
+  }
+}
+
+@media (max-width: 530px) {
+  .logo-title {
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+    white-space: normal;
+    gap: 0.2rem;
+  }
+
+  .verified {
+    display: none;
+  }
+}
+
+/* Mejoras en el botón de cambio de tema */
+.theme-toggle {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #6a11cb, #2575fc); /* Gradiente suave entre dos colores vibrantes */
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Transición suave para el hover */
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Tamaño del botón */
+  height: 40px; /* Tamaño del botón */
+}
+
+/* Hover effect */
+.theme-toggle:hover {
+  transform: scale(1.1); /* Efecto de aumento */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+}
+
+/* Focus effect */
+.theme-toggle:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.6); /* Resaltar cuando el botón está en foco */
+}
+
+/* Modo claro */
+.theme-toggle.light {
+  background: linear-gradient(145deg, #f6d365, #fda085); /* Gradiente cálido para el modo claro */
+}

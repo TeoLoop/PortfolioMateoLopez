@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Proyectos.css';
+import { useTheme } from '../context/ThemeContext';
 
 export const Proyectos = () => {
+  const { theme } = useTheme(); // Obtener el tema actual
   const [proyectos, setProyectos] = useState([]);
 
   useEffect(() => {
@@ -14,11 +16,11 @@ export const Proyectos = () => {
   }, []);
 
   return (
-    <section className='proyectos' id='proyectos'>
+    <section className={`proyectos ${theme}`} id='proyectos'>
       <h2 className='proyectos-title'>Mis Proyectos</h2>
       <div className="proyectos-grid">
         {proyectos.map((p) => (
-          <div className="proyecto-card" key={p.id}>
+          <div className={`proyecto-card ${theme}`} key={p.id}>
             <h3>{p.title}</h3>
             <p>{p.description}</p>
             <div className="tecnologias">
@@ -26,7 +28,7 @@ export const Proyectos = () => {
                 <span key={`${p.id}-${tec}`} className='tech-tag'>{tec.trim()}</span>
               ))}
             </div>
-            
+
             {p.imageUrls && p.imageUrls.length > 0 && (
               <Carousel showThumbs={false} showStatus={false} infiniteLoop className="carousel">
                 {p.imageUrls.map((img, i) => (

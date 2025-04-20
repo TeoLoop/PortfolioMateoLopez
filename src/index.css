@@ -25,3 +25,42 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+/* Modo Claro */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Modo Oscuro */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+/* Ajustes para los componentes */
+.hero {
+  display: flex;
+  flex-direction: column;      
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  color: #f0f0f0;
+  height: 60vh;
+}
+
+.app.light .hero {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.hero-title {
+  color: #00df9a;
+}
+
+.app.light .hero-title {
+  color: #008e3d;
+}
+
+/* Otros estilos pueden seguir aquí */
