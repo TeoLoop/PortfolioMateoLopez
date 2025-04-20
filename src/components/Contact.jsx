@@ -1,29 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { useTheme } from '../context/ThemeContext'; // Importar el hook de tema
+import { useTheme } from '../context/ThemeContext';
 import './Contact.css';
 
 export const Contact = () => {
   const [state, handleSubmit] = useForm("xovebqze");
   const [showMsg, setShowMsg] = useState(false);
   const formRef = useRef(null);
-  const { theme } = useTheme(); // Obtener el tema actual
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (state.succeeded) {
       setShowMsg(true);
-      formRef.current.reset(); // Limpia los campos
+      formRef.current.reset();
 
       const timer = setTimeout(() => {
         setShowMsg(false);
-      }, 3000); // Oculta el mensaje después de 3 segundos
+      }, 3000);
 
-      return () => clearTimeout(timer); // Limpieza
+      return () => clearTimeout(timer);
     }
   }, [state.succeeded]);
 
   return (
-    <section className={`contacto ${theme === 'light' ? 'light' : ''}`} id="contacto">
+    <section className={`contacto ${theme === 'light' ? 'light' : 'dark'}`} id="contacto">
       <h2>Contacto</h2>
 
       <form onSubmit={handleSubmit} ref={formRef}>
@@ -36,7 +36,7 @@ export const Contact = () => {
         </button>
 
         {showMsg && (
-          <p className={`mensaje-exito ${!showMsg ? 'oculto' : ''}`}>
+          <p className="mensaje-exito">
             ¡Mensaje enviado correctamente!
           </p>
         )}
