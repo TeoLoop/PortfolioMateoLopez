@@ -117,8 +117,18 @@
     color: #f0f0f0;
     transition: background-color 0.2s;
   }
+
+  .proyectos.light .tech-tag{
+    background-color: #ccc;
+    color: #272727;
+  }
   
   .tech-tag:hover {
+    background-color: #00df9a;
+    color: #000;
+  }
+
+  .proyectos.light .tech-tag:hover{
     background-color: #00df9a;
     color: #000;
   }
@@ -141,6 +151,10 @@
     font-weight: 600;
     text-decoration: none;
     transition: color 0.2s;
+  }
+
+  .proyectos.light .ver-mas{
+    color: #2a2a2a;
   }
   
   .ver-mas:hover {
