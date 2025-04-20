@@ -161,6 +161,10 @@
     color: #00c785;
   }
   
+  .proyectos.light .ver-mas:hover{
+    color: #00c785;
+  }
+  
   .carousel .slide img {
     width: 100%;
     height: 220px;
