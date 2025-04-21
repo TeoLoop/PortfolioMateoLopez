@@ -43,34 +43,6 @@ export const Proyectos = () => {
   return (
     <section className={`proyectos ${theme}`} id='proyectos'>
       <h2 className='proyectos-title'>Mis Proyectos</h2>
-
-      {isMobile ? (
-        <Carousel showThumbs={false} showStatus={false} infiniteLoop className="carousel">
-          {proyectos.map((p) => (
-            <div className={`proyecto-card ${theme}`} key={p.id}>
-              <h3>{p.title}</h3>
-              <p>{p.description}</p>
-              <div className="tecnologias">
-                {p.techs.split(',').map((tec) => (
-                  <span key={`${p.id}-${tec}`} className='tech-tag'>{tec.trim()}</span>
-                ))}
-              </div>
-
-              {p.imageUrls && p.imageUrls.length > 0 && (
-                <Carousel showThumbs={false} showStatus={false} infiniteLoop className="carousel">
-                  {p.imageUrls.map((img, i) => (
-                    <div key={i}>
-                      <img src={`https://api-proyectos-k0df.onrender.com${img}`} alt={`${p.title} - ${i + 1}`} />
-                    </div>
-                  ))}
-                </Carousel>
-              )}
-              {/* <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a> */}
-              <button className="btn-open-modal" onClick={() => openModal(p)}>Ver Detalles</button>
-            </div>
-          ))}
-        </Carousel>
-      ) : (
         <div className="proyectos-grid">
           {proyectos.map((p) => (
             <div className={`proyecto-card ${theme}`} key={p.id}>
@@ -96,7 +68,6 @@ export const Proyectos = () => {
             </div>
           ))}
         </div>
-      )}
 
       {/* Modal */}
       {modalVisible && selectedProject && (

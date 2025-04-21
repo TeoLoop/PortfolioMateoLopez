@@ -189,14 +189,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .proyectos-grid {
-    display: none;
-  }
-
-  .carousel {
-    display: block;
-  }
-
   .proyecto-img {
     height: 140px;
   }
