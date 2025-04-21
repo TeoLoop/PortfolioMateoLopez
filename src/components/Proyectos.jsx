@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Proyectos.css';
-import { useTheme } from '../context/ThemeContext'; // Asegúrate de importar el useTheme
+import { useTheme } from '../context/ThemeContext';
 import { FaTimes } from 'react-icons/fa';
 
 export const Proyectos = () => {
-  const { theme } = useTheme(); // Ahora puedes usar el tema
+  const { theme } = useTheme();
   const [proyectos, setProyectos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   const [isMobile, setIsMobile] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -15,8 +18,15 @@ export const Proyectos = () => {
   useEffect(() => {
     fetch('https://api-proyectos-k0df.onrender.com/api/projects')
       .then((res) => res.json())
-      .then((data) => setProyectos(data))
-      .catch((err) => console.error('Error cargando proyectos:', err));
+      .then((data) => {
+        setProyectos(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error cargando proyectos:', err);
+        setError(true);
+        setLoading(false);
+      });
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -43,6 +53,18 @@ export const Proyectos = () => {
   return (
     <section className={`proyectos ${theme}`} id='proyectos'>
       <h2 className='proyectos-title'>Mis Proyectos</h2>
+
+      {/* Mensajes de carga o error */}
+      {loading && (
+        <div className="spinner-container">
+          <p>Cargando proyectos...</p>
+          <div className="spinner"></div>
+        </div>
+      )}
+
+      {error && <p className="mensaje-error">No se pudieron cargar los proyectos.</p>}
+
+      {!loading && !error && (
         <div className="proyectos-grid">
           {proyectos.map((p) => (
             <div className={`proyecto-card ${theme}`} key={p.id}>
@@ -63,11 +85,11 @@ export const Proyectos = () => {
                   ))}
                 </Carousel>
               )}
-              {/* <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a> */}
-              <button className="btn-open-modal" onClick={() => openModal(p)}>Ver mas</button>
+              <button className="btn-open-modal" onClick={() => openModal(p)}>Ver más</button>
             </div>
           ))}
         </div>
+      )}
 
       {/* Modal */}
       {modalVisible && selectedProject && (
