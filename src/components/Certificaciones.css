@@ -82,16 +82,18 @@
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: var(--accent-color);
-    color: #fff;
+    height: 40px;
+    font-weight: 500;
+    color: var(--color-text-light);
     text-decoration: none;
     border-radius: 8px;
     text-align: center;
+    background-color: var(--color-primary-dark);
     transition: background-color 0.3s ease;
   }
   
   .ver-certificado:hover {
-    background-color: var(--accent-color-dark);
+    background-color: var(--color-primary-dark-hover);
   }
   
   .modal-overlay {

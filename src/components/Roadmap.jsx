@@ -1,10 +1,11 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
-import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
-import { Certificaciones } from '../components/Certificaciones';
-import ScrollToTop from '../components/ScrollToTop';
-import './Roadmap.css';
+import { useTheme } from '../context/ThemeContext'; 
+import { Navbar } from '../components/Navbar'; 
+import { Footer } from '../components/Footer'; 
+import { Certificaciones } from '../components/Certificaciones'; 
+import ScrollToTop from '../components/ScrollToTop'; 
+import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab'; 
+import './Roadmap.css'; 
 
 const roadmapData = [
     {
@@ -60,54 +61,63 @@ const roadmapData = [
 ];
 
 const Roadmap = () => {
-    const { theme } = useTheme();
+  const { theme } = useTheme(); 
 
-    const studies = roadmapData.filter(item => item.type === 'study');
-    const jobs = roadmapData.filter(item => item.type === 'job');
+  const studies = roadmapData.filter(item => item.type === 'study');
+  const jobs = roadmapData.filter(item => item.type === 'job');
 
-    return (
-        <div className={`roadmap-page ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
-            <Navbar />
+  return (
+    <div className={`roadmap-page ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
+      <Navbar />
+      <section className="roadmap-container">
+        <h2 className="roadmap-title">EXPERIENCIA</h2>
 
-            <section className="roadmap-container">
-                <h2 className="roadmap-title">EXPERIENCIA</h2>
-                <div className="roadmap-section">
-                    <h3 className="section-title">💼 Experiencia Laboral</h3>
-                    <div className="timeline">
-                        {jobs.map((item, index) => (
-                            <div key={index} className="timeline-item job">
-                                <div className="content">
-                                    <h4>{item.title}</h4>
-                                    <span className="place">{item.place}</span>
-                                    <span className="date">{item.date}</span>
-                                    <p>{item.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="roadmap-section">
-                    <h3 className="section-title">📚 Estudios</h3>
-                    <div className="timeline">
-                        {studies.map((item, index) => (
-                            <div key={index} className="timeline-item study">
-                                <div className="content">
-                                    <h4>{item.title}</h4>
-                                    <span className="place">{item.place}</span>
-                                    <span className="date">{item.date}</span>
-                                    <p>{item.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <Certificaciones/>
-            </section>
-            <Footer />
-            <ScrollToTop theme={theme} />
+        <div className="roadmap-section">
+          <h3 className="section-title">💼 Experiencia Laboral</h3>
+          <Timeline>
+            {jobs.map((item, index) => (
+              <TimelineItem key={index}>
+                <TimelineSeparator>
+                  <TimelineDot color="primary" />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <h4>{item.title}</h4>
+                  <span className="place">{item.place} </span>
+                  <span className="date">{item.date}</span>
+                  <p>{item.description}</p>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
         </div>
-    );
+
+        <div className="roadmap-section">
+          <h3 className="section-title">📚 Estudios</h3>
+          <Timeline>
+            {studies.map((item, index) => (
+              <TimelineItem key={index}>
+                <TimelineSeparator>
+                  <TimelineDot color="secondary" />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <h4>{item.title}</h4>
+                  <span className="place">{item.place} </span>
+                  <span className="date">{item.date}</span>
+                  <p>{item.description}</p>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
+        </div>
+
+        <Certificaciones />
+      </section>
+      <Footer />
+      <ScrollToTop theme={theme} />
+    </div>
+  );
 };
 
 export default Roadmap;

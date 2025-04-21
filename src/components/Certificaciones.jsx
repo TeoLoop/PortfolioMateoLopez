@@ -11,14 +11,14 @@ const certificaciones = [
     titulo: 'Desarrollo Web',
     lugar: 'Digital House',
     fecha: 'Abril 2023',
-    link: 'https://certificado-react.com',
+    link: 'https://www.linkedin.com/in/lopezmateo/details/certifications/1744046968152/single-media-viewer/?profileId=ACoAACM8HcEB1i-lBh7r2Xs7qdghBuHLbPMpEE0',
     imagen: desarrolloWebImage,  // Usando la imagen importada
   },
   {
     titulo: 'Desarrollador de Base de Datos',
     lugar: 'Linkedin Learning',
     fecha: 'Abril 2025',
-    link: 'https://certiprof.com/certificado',
+    link: 'https://www.linkedin.com/learning/certificates/ab18d5578ea20c9b4d82654bc3055548664d537d69310900bbfb6d4882eeeebc?u=262407930',
     imagen: desarrolloBD,  // Usando la imagen importada
   },
   // Puedes agregar más certificaciones y usar la imagen importada aquí
