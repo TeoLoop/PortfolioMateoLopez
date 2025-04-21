@@ -4,6 +4,7 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import './Roadmap.css';
+import { Certificaciones } from './certificaciones';
 
 const roadmapData = [
     {
@@ -54,8 +55,8 @@ const roadmapData = [
         place: 'BIOS',
         date: '2021',
         description: 'Formación en soporte técnico, mantenimiento y reparación de sistemas informáticos. Incluye conocimientos sobre hardware, software, redes y resolución de problemas en entornos corporativos. El programa proporciona habilidades prácticas para ofrecer asistencia técnica a usuarios, gestionar incidencias y garantizar el buen funcionamiento de la infraestructura IT en empresas.',
-    }    
-    
+    }
+
 ];
 
 const Roadmap = () => {
@@ -67,10 +68,9 @@ const Roadmap = () => {
     return (
         <div className={`roadmap-page ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
             <Navbar />
-            <ScrollToTop theme={theme} />
 
             <section className="roadmap-container">
-                <h2 className="roadmap-title">Mi Trayectoria</h2>
+                <h2 className="roadmap-title">EXPERIENCIA</h2>
                 <div className="roadmap-section">
                     <h3 className="section-title">💼 Experiencia Laboral</h3>
                     <div className="timeline">
@@ -86,7 +86,7 @@ const Roadmap = () => {
                         ))}
                     </div>
                 </div>
-                
+
                 <div className="roadmap-section">
                     <h3 className="section-title">📚 Estudios</h3>
                     <div className="timeline">
@@ -102,9 +102,10 @@ const Roadmap = () => {
                         ))}
                     </div>
                 </div>
+                <Certificaciones />
             </section>
-
             <Footer />
+            <ScrollToTop theme={theme} />
         </div>
     );
 };

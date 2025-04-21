@@ -1,0 +1,156 @@
+.certificaciones {
+    padding: 4rem 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .certificaciones-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .certificacion-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .certificacion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-content {
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-image:hover img {
+    transform: scale(1.05);
+  }
+  
+  .card-info {
+    padding-top: 1rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Espacio entre los elementos dentro de la tarjeta */
+  }
+  
+  .card-info h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--accent-color);
+  }
+  
+  .card-info .place {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  
+  .card-info .date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .ver-certificado {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ver-certificado:hover {
+    background-color: var(--accent-color-dark);
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);  /* Fondo oscuro más opaco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    width: 80vw; /* Ancho al 80% de la pantalla */
+    height: 80vh; /* Alto al 80% de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen para que no se deforme */
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;  /* Asegura que el botón se mantenga por encima de la imagen */
+  }
+  
+  .modal-close:hover {
+    color: var(--accent-color); /* Color en hover, puedes cambiarlo por uno que prefieras */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .certificaciones-container {
+      grid-template-columns: 1fr;
+      padding: 0 2rem;
+    }
+  
+    .certificacion-card {
+      margin-bottom: 1.5rem;
+    }
+  }
+  

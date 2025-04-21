@@ -54,16 +54,16 @@ const techData = [
         color: "#ff6c37",
     },
     {
-        name: "Git",
-        icon: <SiGit size={50} />,
-        url: "https://git-scm.com/",
-        color: "#f1502f",
-    },
-    {
         name: "GitHub",
         icon: <FaGithub size={50} />,
         url: "https://github.com/",
         color: "#666666",
+    },
+    {
+        name: "Git",
+        icon: <SiGit size={50} />,
+        url: "https://git-scm.com/",
+        color: "#f1502f",
     },
     {
         name: "Bootstrap",
