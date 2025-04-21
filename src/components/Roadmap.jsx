@@ -1,11 +1,11 @@
-import React from 'react';
-import { useTheme } from '../context/ThemeContext'; 
-import { Navbar } from '../components/Navbar'; 
-import { Footer } from '../components/Footer'; 
-import { Certificaciones } from '../components/Certificaciones'; 
-import ScrollToTop from '../components/ScrollToTop'; 
-import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab'; 
-import './Roadmap.css'; 
+import React, { useEffect, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+import { Certificaciones } from '../components/Certificaciones';
+import ScrollToTop from '../components/ScrollToTop';
+import { motion } from 'framer-motion';
+import './Roadmap.css';
 
 const roadmapData = [
     {
@@ -25,7 +25,7 @@ const roadmapData = [
     {
         type: 'study',
         title: 'Ingeniería en Sistemas',
-        place: 'Universidad de la Republiva',
+        place: 'Universidad de la República',
         date: '2021 - 2022',
         description: 'Primer año cursado y aprobado...',
     },
@@ -57,67 +57,91 @@ const roadmapData = [
         date: '2021',
         description: 'Formación en soporte técnico, mantenimiento y reparación de sistemas informáticos. Incluye conocimientos sobre hardware, software, redes y resolución de problemas en entornos corporativos. El programa proporciona habilidades prácticas para ofrecer asistencia técnica a usuarios, gestionar incidencias y garantizar el buen funcionamiento de la infraestructura IT en empresas.',
     }
-
 ];
 
 const Roadmap = () => {
-  const { theme } = useTheme(); 
+    const { theme } = useTheme();
+  
+    const [timelinePosition, setTimelinePosition] = useState('alternate');
+  
+    useEffect(() => {
+        const handleResize = () => {
+            setTimelinePosition(window.innerWidth < 768 ? 'right' : 'alternate');
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    const studies = roadmapData.filter(item => item.type === 'study');
+    const jobs = roadmapData.filter(item => item.type === 'job');
+  
+    // Efecto de animación de entrada
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    };
 
-  const studies = roadmapData.filter(item => item.type === 'study');
-  const jobs = roadmapData.filter(item => item.type === 'job');
-
-  return (
-    <div className={`roadmap-page ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
-      <Navbar />
-      <section className="roadmap-container">
-        <h2 className="roadmap-title">EXPERIENCIA</h2>
-
-        <div className="roadmap-section">
-          <h3 className="section-title">💼 Experiencia Laboral</h3>
-          <Timeline>
-            {jobs.map((item, index) => (
-              <TimelineItem key={index}>
-                <TimelineSeparator>
-                  <TimelineDot color="primary" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <h4>{item.title}</h4>
-                  <span className="place">{item.place} </span>
-                  <span className="date">{item.date}</span>
-                  <p>{item.description}</p>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
+    return (
+        <div className={`roadmap-page ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
+            <Navbar />
+            <section className="roadmap-container">
+                <h2 className="roadmap-title">EXPERIENCIA</h2>
+    
+                <div className="roadmap-section">
+                    <h3 className="section-title">💼 Experiencia Laboral</h3>
+                    <div className="timeline">
+                        {jobs.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.2 }}
+                                className={`timeline-item ${timelinePosition === 'alternate' ? 'alternate' : 'right'}`}
+                            >
+                                <div className="timeline-dot"></div>
+                                <div className="timeline-content">
+                                    <h4>{item.title}</h4>
+                                    <span className="place">{item.place}</span>
+                                    <span className="date">{item.date}</span>
+                                    <p>{item.description}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+    
+                <div className="roadmap-section">
+                    <h3 className="section-title">📚 Estudios</h3>
+                    <div className="timeline">
+                        {studies.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.2 }}
+                                className={`timeline-item ${timelinePosition === 'alternate' ? 'alternate' : 'right'}`}
+                            >
+                                <div className="timeline-dot"></div>
+                                <div className="timeline-content">
+                                    <h4>{item.title}</h4>
+                                    <span className="place">{item.place}</span>
+                                    <span className="date">{item.date}</span>
+                                    <p>{item.description}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+    
+                <Certificaciones />
+            </section>
+            <Footer />
+            <ScrollToTop theme={theme} />
         </div>
-
-        <div className="roadmap-section">
-          <h3 className="section-title">📚 Estudios</h3>
-          <Timeline>
-            {studies.map((item, index) => (
-              <TimelineItem key={index}>
-                <TimelineSeparator>
-                  <TimelineDot color="secondary" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <h4>{item.title}</h4>
-                  <span className="place">{item.place} </span>
-                  <span className="date">{item.date}</span>
-                  <p>{item.description}</p>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </div>
-
-        <Certificaciones />
-      </section>
-      <Footer />
-      <ScrollToTop theme={theme} />
-    </div>
-  );
+    );
 };
 
 export default Roadmap;

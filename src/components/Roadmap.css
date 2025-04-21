@@ -16,67 +16,62 @@
   text-align: center;
 }
 
-/* Título de cada sección */
 .section-title {
   font-size: 1.8rem;
   margin: 2rem 0 1.5rem;
   color: var(--accent-color);
   border-left: 5px solid var(--color-primary);
   padding-left: 1rem;
+  text-align: left;
 }
 
-/* Separación visual entre secciones */
 .roadmap-section {
   margin-bottom: 4rem;
 }
 
+/* Estilo del Timeline */
 .timeline {
-  display: flex;
-  flex-direction: row; /* División en dos columnas */
-  gap: 3rem;
   position: relative;
   padding-left: 2rem;
-  border-left: 3px solid var(--color-primary);
-  flex-wrap: wrap; /* Para que se acomode en pantallas pequeñas */
+  margin-bottom: 2rem;
 }
 
 .timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
   position: relative;
-  padding-left: 1.5rem;
-  flex: 1 1 45%; /* Hace que cada item ocupe el 45% de la pantalla */
-  min-width: 300px; /* Para evitar que los ítems se reduzcan demasiado en pantallas pequeñas */
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -12px;
-  top: 0.4rem;
-  width: 14px;
-  height: 14px;
+.timeline-item.alternate {
+  flex-direction: row-reverse;
+}
+
+.timeline-item .timeline-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #20d77c;
   border-radius: 50%;
+  position: absolute;
+  left: -6px;
+  top: 0;
 }
 
-/* Color de fondo para estudios */
-.timeline-item.study::before {
-  background-color: #4e9af1; /* Azul para estudios */
+.timeline-item.alternate .timeline-dot {
+  right: -6px;
+  left: unset;
 }
 
-/* Color de fondo para trabajos */
-.timeline-item.job::before {
-  background-color: #f39c12; /* Naranja/Amarillo para trabajos */
-}
-
-.timeline-item .content {
+.timeline-item .timeline-content {
   background-color: var(--card-bg);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-.timeline-item .content h3,
-.timeline-item .content h4 {
-  margin: 0 0 0.5rem;
+.timeline-item .timeline-content h4 {
+  margin: 0;
 }
 
 .timeline-item .place {
@@ -88,17 +83,20 @@
 .timeline-item .date {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  display: block;
   margin-bottom: 0.5rem;
 }
 
-/* Temas */
+.timeline-item p {
+  margin-top: 0.5rem;
+}
+
+/* Theme Colors */
 .light-theme {
   --bg-color: #f9f9f9;
   --text-color: #111;
   --card-bg: #fff;
   --text-secondary: #666;
-  --color-primary: #00e03f;
+  --color-primary: #20d77c;
 }
 
 .dark-theme {
@@ -106,46 +104,5 @@
   --text-color: #eee;
   --card-bg: #1e1e1e;
   --text-secondary: #bbb;
-  --color-primary: #00ea89;
-}
-
-.roadmap-page.light-theme,
-.roadmap-page.dark-theme {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-/* En pantallas más pequeñas */
-@media (max-width: 768px) {
-  .timeline {
-      flex-direction: column;
-      padding-left: 0; /* Quita el borde izquierdo en pantallas pequeñas */
-  }
-
-  .timeline-item {
-      flex: 1 1 100%; /* Hace que los elementos ocupen el 100% en pantallas pequeñas */
-      min-width: 0; /* Elimina el mínimo ancho */
-      margin-bottom: 2rem; /* Añade espacio entre los ítems */
-      padding-left: 1rem; /* Ajusta el padding izquierdo para las pantallas pequeñas */
-  }
-
-  .roadmap-title {
-      font-size: 2rem; /* Ajusta el tamaño del título en pantallas pequeñas */
-  }
-
-  .section-title {
-      font-size: 1.6rem; /* Ajusta el tamaño del título de cada sección */
-  }
-
-  .timeline-item .content {
-      padding: 1.2rem; /* Ajusta el padding de los elementos en pantallas pequeñas */
-  }
-
-  .timeline-item h3 {
-      font-size: 1.2rem; /* Ajusta el tamaño de los títulos dentro de las tarjetas */
-  }
-
-  .timeline-item p {
-      font-size: 0.9rem; /* Ajusta el tamaño del texto de las descripciones */
-  }
+  --color-primary: #1dbf73;
 }
