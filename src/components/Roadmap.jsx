@@ -2,9 +2,9 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import { Certificaciones } from '../components/Certificaciones';
 import ScrollToTop from '../components/ScrollToTop';
 import './Roadmap.css';
-import { Certificaciones } from './certificaciones';
 
 const roadmapData = [
     {
@@ -102,7 +102,7 @@ const Roadmap = () => {
                         ))}
                     </div>
                 </div>
-                <Certificaciones />
+                <Certificaciones/>
             </section>
             <Footer />
             <ScrollToTop theme={theme} />
