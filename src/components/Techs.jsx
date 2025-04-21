@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaJava, FaHtml5, FaCss3Alt, FaGithub, FaTools, FaLinux, FaWindows, FaDatabase } from 'react-icons/fa'; // Usamos FaDatabase para Microsoft SQL
-import { SiSpringboot, SiPostman, SiGit, SiBootstrap, SiJira, SiNotion, SiCplusplus } from 'react-icons/si'; // Algunos íconos de Si disponibles
+import { FaReact, FaNodeJs, FaJava, FaHtml5, FaCss3Alt, FaGithub, FaTools, FaLinux, FaWindows, FaDatabase } from 'react-icons/fa';
+import { SiSpringboot, SiPostman, SiGit, SiBootstrap, SiJira, SiNotion, SiCplusplus } from 'react-icons/si';
 import './Techs.css';
 import { useTheme } from '../context/ThemeContext';
 
@@ -10,12 +10,6 @@ const techData = [
         icon: <FaReact size={50} />,
         url: "https://reactjs.org",
         color: "#61dafb",
-    },
-    {
-        name: "Node.js",
-        icon: <FaNodeJs size={50} />,
-        url: "https://nodejs.org",
-        color: "#68a063",
     },
     {
         name: "Java",
@@ -42,8 +36,8 @@ const techData = [
         color: "#00599c",
     },
     {
-        name: "Microsoft SQL Server",  // Cambio de nombre y usamos un ícono genérico
-        icon: <FaDatabase size={50} />,  // Usamos FaDatabase como ícono
+        name: "Microsoft SQL Server",
+        icon: <FaDatabase size={50} />,
         url: "https://www.microsoft.com/sql-server",
         color: "#cc2927",
     },
@@ -110,14 +104,30 @@ const Techs = () => {
         <section className={`techs-container ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
             <div className="techs-scroll-wrapper">
                 <div className="techs-icons">
-                    {[...techData, ...techData].map((tech, index) => (
+                    {/* Íconos originales con delay */}
+                    {techData.map((tech, index) => (
                         <a
                             key={`${tech.name}-${index}`}
                             href={tech.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="tech-icon"
-                            style={{ color: tech.color }}
+                            style={{ color: tech.color, '--i': index + 1 }}
+                        >
+                            {tech.icon}
+                            <p>{tech.name}</p>
+                        </a>
+                    ))}
+
+                    {/* Íconos duplicados para scroll continuo */}
+                    {techData.map((tech, index) => (
+                        <a
+                            key={`${tech.name}-${index}`}
+                            href={tech.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="tech-icon"
+                            style={{ color: tech.color, '--i': index + 1 }}
                         >
                             {tech.icon}
                             <p>{tech.name}</p>
@@ -126,7 +136,6 @@ const Techs = () => {
                 </div>
             </div>
         </section>
-
     );
 };
 

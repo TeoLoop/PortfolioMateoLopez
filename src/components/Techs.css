@@ -3,68 +3,82 @@
     position: relative;
     padding: 50px 0;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .techs-scroll-wrapper {
+}
+
+.techs-scroll-wrapper {
     display: flex;
     width: 100%;
     overflow: hidden;
-  }
-  
-  .techs-icons {
+}
+
+.techs-icons {
     display: flex;
+    flex-wrap: nowrap;
     gap: 60px;
-    animation: scrollTechs 30s linear infinite;
-    min-width: max-content;
-  }
-  
-  .tech-icon {
+    animation: scrollTechs 20s linear infinite;
+    will-change: transform;
+}
+
+.tech-icon {
     text-align: center;
     width: 100px;
     height: 100px;
-    transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  .tech-icon:hover {
-    transform: scale(1.1);
-  }
-  
-  .tech-icon p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-  }
-  
-  /* Animación de desplazamiento continuo */
-  @keyframes scrollTechs {
+
+    opacity: 0;
+    transform: translateY(20px); /* Movimiento de entrada */
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(var(--i, 1) * 0.1s);
+
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición de transformación y brillo */
+}
+
+.tech-icon:hover {
+    transform: scale(1.2); /* Agranda al hacer hover */
+    filter: brightness(1.2); /* Efecto de brillo */
+}
+
+/* Animación de entrada: Fade In + Movimiento */
+@keyframes fadeInUp {
     0% {
-      transform: translateX(0);
+        opacity: 0;
+        transform: translateY(20px); /* Comienza desplazado */
     }
     100% {
-      transform: translateX(-50%);
+        opacity: 1;
+        transform: translateY(0); /* Llega a su posición original */
     }
-  }
-  
-  /* Tema claro */
-  .light-theme {
+}
+
+/* Scroll infinito */
+@keyframes scrollTechs {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Tema claro */
+.light-theme {
     background-color: white;
     color: black;
-  }
-  
-  .light-theme .tech-icon {
+}
+
+.light-theme .tech-icon {
     color: black;
-  }
-  
-  /* Tema oscuro */
-  .dark-theme {
+}
+
+/* Tema oscuro */
+.dark-theme {
     background-color: #121212;
     color: white;
-  }
-  
-  .dark-theme .tech-icon {
+}
+
+.dark-theme .tech-icon {
     color: white;
-  }
-  
+}
