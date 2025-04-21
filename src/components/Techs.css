@@ -1,3 +1,4 @@
+/* Contenedor principal */
 .techs-container {
     overflow: hidden;
     position: relative;
@@ -5,6 +6,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Contenedor de los íconos con desplazamiento */
 .techs-scroll-wrapper {
     display: flex;
     width: 100%;
@@ -13,12 +15,13 @@
 
 .techs-icons {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 60px;
+    width: max-content; /* Aseguramos que el contenido no se recorte */
     animation: scrollTechs 20s linear infinite;
     will-change: transform;
+    gap: 20px; /* Añadido para más espacio entre los íconos */
 }
 
+/* Estilo para los íconos */
 .tech-icon {
     text-align: center;
     width: 100px;
@@ -27,39 +30,39 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     opacity: 0;
     transform: translateY(20px); /* Movimiento de entrada */
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: calc(var(--i, 1) * 0.1s);
 
-    transition: transform 0.3s ease, filter 0.3s ease; /* Transición de transformación y brillo */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Hover agranda el icono */
 .tech-icon:hover {
-    transform: scale(1.2); /* Agranda al hacer hover */
-    filter: brightness(1.2); /* Efecto de brillo */
+    transform: scale(1.2) translateY(0); /* Agranda el icono y lo alinea correctamente */
+    filter: brightness(1.2); /* Brillo aumentado */
 }
 
-/* Animación de entrada: Fade In + Movimiento */
+/* Animación de entrada (deslizar y aparecer) */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Comienza desplazado */
+        transform: translateY(20px); /* Empieza desplazado */
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Llega a su posición original */
+        transform: translateY(0); /* Vuelve a la posición original */
     }
 }
 
-/* Scroll infinito */
+/* Animación de scroll infinito con ajuste para evitar parpadeo */
 @keyframes scrollTechs {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-50%); /* Mueve los íconos hasta el 50% de su largo total */
     }
 }
 
