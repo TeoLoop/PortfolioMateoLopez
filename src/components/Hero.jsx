@@ -14,13 +14,18 @@ export const Hero = () => {
       >
         <h2 className="hero-title">
           <Typewriter
-            words={['HOLA, MI NOMBRE ES MATEO LOPEZ']}
-            loop={2}
+            words={[
+              'HOLA, MI NOMBRE ES MATEO LOPEZ',
+              'HI, MY NAME IS MATEO LOPEZ',
+              'OLÁ, MEU NOME É MATEO LOPEZ',
+            ]}
+            
+            loop={false}
             cursor
             cursorStyle='|'
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={1000}
+            typeSpeed={80}
+            deleteSpeed={40}
+            delaySpeed={1500}
           />
         </h2>
 
@@ -49,7 +54,7 @@ export const Hero = () => {
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
         >
-          Ver mis proyectos
+         Ver mis proyectos
         </motion.a>
       </motion.div>
     </section>

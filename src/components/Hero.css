@@ -1,87 +1,97 @@
 .hero {
-    display: flex;
-    flex-direction: column;      
-    align-items: center;
-    justify-content: center;      /*esto centra verticalmente */
-    background-color: #121212;
-    color: #f0f0f0;
-    height: 60vh;                /* ocupar toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* centra verticalmente */
+  background-color: #121212;
+  color: #f0f0f0;
+  height: 60vh;
+}
 
-  }
-  
+.content {
+  text-align: justify;
+  width: 80%;
+  max-width: 800px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #00df9a;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-size: 3rem;
+  font-family: 'Noe Display', Georgia, Times, serif;
+  margin-bottom: 1rem;
+}
+
+.hero-p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.hero-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #00df9a;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 223, 154, 0.3);
+}
+
+.hero-button:hover {
+  background-color: #00c785;
+}
+
+/* Responsiveness */
+
+@media (max-width: 905px) {
   .content {
+    margin: 15px;
+    width: 90%;
+  }
+
+  .content h2 {
+    text-align: start;
+  }
+}
+
+@media (max-width: 590px) {
+  .hero {
+    padding-top: 7rem;
+    padding-bottom: 9rem;
+  }
+
+  .content h2 {
+    text-align: center;
+  }
+
+  .content {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 1rem;
+  }
+
+  .hero-p {
+    font-size: 1rem;
     text-align: justify;
-    width: 80%;
-    max-width: 800px;
+    margin-bottom: 4rem;
   }
-
-.hero-title{
-    margin: 0;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #00df9a;
 }
-
-.hero-subtitle{
-    margin: 0;
-    font-size: 3rem;
-    font-family: Noe Display, Georgia, Times, serif;
-}
-
-.hero-p{
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-align: justify;
-
-}
-
-.hero-button{
-    padding: 0.8rem 1.5rem;
-    background-color: #00df9a;
-    color: #000;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all .3s ease;
-}
-
-.hero-button:hover{
-    background-color: #00c785;
-}
-
-@media (max-width: 905px){
-    .content{
-      margin: 15px;
-      width: 90%;
-    }
-    .content h2{
-      text-align: start;   
-    }
-  }
-  
-  @media (max-width: 590px){
-    .hero{
-      padding-top: 7rem;
-      padding-bottom: 9rem;
-    }
-    .content h2{
-        text-align: center;  
-      }
-    .content{
-        
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
-    .hero-subtitle {
-      font-size: 2rem;
-    }
-    .hero-title {
-      font-size: 1rem;
-    }
-    .hero-p {
-      font-size: 1rem;
-      text-align: justify;
-      margin-bottom: 4rem;
-    }
-  }
-  
