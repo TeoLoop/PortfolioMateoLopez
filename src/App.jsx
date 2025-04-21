@@ -1,21 +1,36 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { useTheme } from './context/ThemeContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Loader from './components/Loader'; // Asegurate de tener este archivo creado
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Cambia la clase del body al tema actual
+  // Tema
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
 
+  // Simulación de carga inicial
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 segundos de carga
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className={`app ${theme}`}>
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      )}
     </div>
   );
 }

@@ -1,0 +1,46 @@
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00df9a;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  opacity: 0.8;
+  visibility: hidden; /* Asegura que el botón no sea visible por defecto */
+  pointer-events: none; /* No se puede interactuar con el botón cuando no es visible */
+}
+
+/* Cuando el botón es visible */
+.scroll-top-btn.visible {
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* Hover en el botón */
+.scroll-top-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #000; /* Color del icono cuando se pasa el mouse */
+  opacity: 1;
+}
+
+/* Estilos para el modo oscuro */
+.scroll-top-btn.dark {
+  background-color: #00df9a;
+  color: white;
+}
+
+/* Estilos para el modo claro */
+.scroll-top-btn.light {
+  background-color: #00df9a;
+  color: white;
+}
+
+.scroll-top-btn:focus {
+  outline: none;
+}

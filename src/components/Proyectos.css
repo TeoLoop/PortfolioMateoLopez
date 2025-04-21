@@ -1,182 +1,213 @@
 /* General */
 .proyectos {
-    padding: 4rem 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+.proyectos-title {
+  font-family: Noe Display, Georgia, Times, serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Modo Oscuro */
+.proyectos.dark {
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+}
+
+.proyectos.dark .proyectos-title {
+  color: #ffffff;
+}
+
+/* Modo Claro */
+.proyectos.light {
+  background-color: #f0f0f0;
+  color: #1f1f1f;
+}
+
+.proyectos.light .proyectos-title {
+  color: #1f1f1f;
+}
+
+/* Grid de proyectos */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Cards en modo oscuro */
+.proyecto-card.dark {
+  background: linear-gradient(145deg, #1e1e1e, #121212);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #1f1f1f;
+}
+
+/* Cards en modo claro */
+.proyecto-card.light {
+  background: linear-gradient(145deg, #ffffff, #e0e0e0);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #d1d1d1;
+}
+
+/* Hover de Cards */
+.proyecto-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 12px 35px rgba(0, 223, 154, 0.2);
+}
+
+.proyecto-card h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #00df9a;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.proyecto-card p {
+  margin: 0.5rem 0 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Texto en modo oscuro */
+.proyectos.dark .proyecto-card p {
+  color: #ccc;
+}
+
+/* Texto en modo claro */
+.proyectos.light .proyecto-card p {
+  color: #333;
+}
+
+/* Tecnologías */
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  cursor:context-menu;
+}
+
+.tech-tag {
+  background-color: #2a2a2a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.proyectos.light .tech-tag {
+  background-color: #ccc;
+  color: #272727;
+}
+
+.tech-tag:hover {
+  background-color: #00df9a;
+  color: #000;
+}
+
+.proyectos.light .tech-tag:hover {
+  background-color: #00df9a;
+  color: #000;
+}
+
+/* Imagen de los proyectos */
+.proyecto-img {
+  width: 100%;
+  height: 200px; /* Asegúrate de que la imagen tenga una altura definida */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 0 15px rgba(0, 223, 154, 0.15);
+  display: block; /* Asegura que la imagen se muestre como un bloque */
+}
+
+/* Link "Ver más" */
+.ver-mas {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #b6b6b6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.proyectos.light .ver-mas {
+  color: #2a2a2a;
+}
+
+.ver-mas:hover {
+  color: #00c785;
+}
+
+.proyectos.light .ver-mas:hover {
+  color: #00c785;
+}
+
+/* Carrusel y vista móvil */
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.carousel {
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .proyectos-grid {
+    display: none;
   }
-  
-  /* Título */
-  .proyectos-title {
-    font-family: Noe Display, Georgia, Times, serif;
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+  .carousel {
+    display: block;
   }
-  
-  /* Modo Oscuro */
-  .proyectos.dark {
-    background-color: #0d0d0d;
-    color: #f0f0f0;
+
+  /* Ajustar el alto de la imagen en dispositivos móviles */
+  .proyecto-img {
+    height: 150px; /* Reducir el tamaño de las imágenes en pantallas pequeñas */
   }
-  
-  .proyectos.dark .proyectos-title {
-    color: #ffffff;
-  }
-  
-  /* Modo Claro */
-  .proyectos.light {
-    background-color: #f0f0f0;
-    color: #1f1f1f;
-  }
-  
-  .proyectos.light .proyectos-title {
-    color: #1f1f1f;
-  }
-  
-  /* Grid de proyectos */
+}
+
+@media (min-width: 769px) {
+
+
   .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  /* Cards en modo oscuro */
-  .proyecto-card.dark {
-    background: linear-gradient(145deg, #1e1e1e, #121212); /* Fondo oscuro en modo dark */
-    padding: 2rem;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid #1f1f1f;
-  }
-  
-  /* Cards en modo claro */
-  .proyecto-card.light {
-    background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Fondo más claro para modo claro */
-    padding: 2rem;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid #d1d1d1; /* Borde más claro para modo claro */
-  }
-  
-  /* Hover de Cards */
-  .proyecto-card:hover {
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 12px 35px rgba(0, 223, 154, 0.2);
-  }
-  
-  .proyecto-card h3 {
-    margin-top: 0;
-    font-size: 1.6rem;
-    color: #00df9a;
-    margin-bottom: 0.5rem;
-    text-align: center; /* Título centrado */
-  }
-  
-  .proyecto-card p {
-    margin: 0.5rem 0 1rem;
-    line-height: 1.5;
-    font-size: 1rem;
-  }
-  
-  /* Texto en modo oscuro */
-  .proyectos.dark .proyecto-card p {
-    color: #ccc; /* Color de texto claro en modo oscuro */
-  }
-  
-  /* Texto en modo claro */
-  .proyectos.light .proyecto-card p {
-    color: #333; /* Color de texto oscuro en modo claro */
-  }
-  
-  /* Tecnologías */
-  .tecnologias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    cursor: crosshair;
-  }
-  
-  .tech-tag {
-    background-color: #2a2a2a;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #f0f0f0;
-    transition: background-color 0.2s;
   }
 
-  .proyectos.light .tech-tag{
-    background-color: #ccc;
-    color: #272727;
-  }
-  
-  .tech-tag:hover {
-    background-color: #00df9a;
-    color: #000;
-  }
-
-  .proyectos.light .tech-tag:hover{
-    background-color: #00df9a;
-    color: #000;
-  }
-  
-  /* Imagen de los proyectos */
+  /* Asegurarse de que las imágenes en pantallas grandes sean visibles */
   .proyecto-img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 1rem;
-    object-fit: cover;
-    max-height: 200px;
-    box-shadow: 0 0 15px rgba(0, 223, 154, 0.15);
+    height: 200px; /* Especificar la altura en pantallas grandes */
+    object-fit: cover; /* Garantiza que la imagen se ajuste correctamente */
   }
-  
-  /* Link "Ver más" */
-  .ver-mas {
-    display: inline-block;
-    margin-top: 1.5rem;
-    color: #b6b6b6;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .proyectos.light .ver-mas{
-    color: #2a2a2a;
-  }
-  
-  .ver-mas:hover {
-    color: #00c785;
-  }
-  
-  .proyectos.light .ver-mas:hover{
-    color: #00c785;
-  }
-  
-  .carousel .slide img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  }
-  
-  .carousel {
-    max-width: 100%;
-    margin-top: 1rem;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  
+}
