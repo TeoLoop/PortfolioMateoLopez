@@ -139,7 +139,7 @@
   }
   
   .modal-close:hover {
-    color: var(--accent-color); /* Color en hover, puedes cambiarlo por uno que prefieras */
+    color: var(--accent-color); 
   }
   
   
