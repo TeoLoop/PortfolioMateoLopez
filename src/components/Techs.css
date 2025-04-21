@@ -16,9 +16,9 @@
 .techs-icons {
     display: flex;
     width: max-content; /* Aseguramos que el contenido no se recorte */
-    animation: scrollTechs 20s linear infinite;
+    animation: scrollTechs 30s linear infinite;
     will-change: transform, filter;
-    gap: 20px; /* Añadido para más espacio entre los íconos */
+    gap: 40px; /* Añadido para más espacio entre los íconos */
 }
 
 /* Estilo para los íconos */
