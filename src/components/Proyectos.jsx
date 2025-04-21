@@ -65,7 +65,7 @@ export const Proyectos = () => {
                   ))}
                 </Carousel>
               )}
-              <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a>
+              {/* <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a> */}
               <button className="btn-open-modal" onClick={() => openModal(p)}>Ver Detalles</button>
             </div>
           ))}
@@ -91,8 +91,8 @@ export const Proyectos = () => {
                   ))}
                 </Carousel>
               )}
-              <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a>
-              <button className="btn-open-modal" onClick={() => openModal(p)}>Ver Detalles</button>
+              {/* <a href={p.link} target='_blank' rel='noreferrer' className='ver-mas'>Ver en GitHub</a> */}
+              <button className="btn-open-modal" onClick={() => openModal(p)}>Ver mas</button>
             </div>
           ))}
         </div>

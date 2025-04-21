@@ -287,10 +287,19 @@
 
 .modal-overlay.dark .btn-close-modal {
   color: #fff;
+  transition: all .3s ease;
+}
+.modal-overlay.dark .btn-close-modal:hover {
+  color: rgb(255, 71, 71);
 }
 
 .modal-overlay.light .btn-close-modal {
+  transition: all .3s ease;
   color: #333;
+}
+
+.modal-overlay.light .btn-close-modal:hover {
+  color: rgb(255, 71, 71);
 }
 
 /* Botón "Ver Detalles" actualizado */
@@ -305,7 +314,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin-top: 1rem;
-  align-self: center;
+  align-self: flex-end;
   box-shadow: 0 5px 20px rgba(0, 223, 154, 0.2);
 }
 

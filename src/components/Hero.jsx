@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
+import { FaRocket } from 'react-icons/fa'; // Si decides agregar un ícono
 import './Hero.css';
 
 export const Hero = () => {
@@ -10,22 +11,18 @@ export const Hero = () => {
         className="content"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        exit={{ opacity: 0, y: -50 }}  /* Animación de salida */
       >
         <h2 className="hero-title">
           <Typewriter
-            words={[
-              'HOLA, MI NOMBRE ES MATEO LOPEZ',
-              'HI, MY NAME IS MATEO LOPEZ',
-              'OLÁ, MEU NOME É MATEO LOPEZ',
-            ]}
-            
-            loop={false}
+            words={['HOLA, MI NOMBRE ES MATEO LOPEZ', 'HI, MY NAME IS MATEO LOPEZ', 'OLÁ, MEU NOME É MATEO LOPEZ']}
+            loop={2}
             cursor
             cursorStyle='|'
-            typeSpeed={80}
-            deleteSpeed={40}
-            delaySpeed={1500}
+            typeSpeed={120}
+            deleteSpeed={60}
+            delaySpeed={900}
           />
         </h2>
 
@@ -54,8 +51,18 @@ export const Hero = () => {
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
         >
-         Ver mis proyectos
+          Ver mis proyectos
         </motion.a>
+        
+        {/* Si decides agregar un ícono animado */}
+        <motion.div
+          className="hero-icon"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <FaRocket />
+        </motion.div>
       </motion.div>
     </section>
   );
