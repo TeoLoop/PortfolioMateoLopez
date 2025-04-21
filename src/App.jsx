@@ -2,9 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { useTheme } from './context/ThemeContext';
 import { useEffect, useState } from 'react';
-import Loader from './components/Loader'; // Asegurate de tener este archivo creado
+import Loader from './components/Loader'; // Asegúrate de tener este archivo creado
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Roadmap from './components/Roadmap'; // Importar el componente
 
 function App() {
   const { theme } = useTheme();
@@ -31,6 +32,8 @@ function App() {
       ) : (
         <Routes>
           <Route path='/' element={<Home />} />
+          {/* Agregar el roadmap a una nueva ruta */}
+          <Route path='/experiencia' element={<Roadmap />} />
         </Routes>
       )}
     </div>

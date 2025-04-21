@@ -1,5 +1,13 @@
-/* Navbar.css */
+/* VARIABLES */
+:root {
+  --dark-bg: #1f1f1f;
+  --light-bg: #ffffff;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --primary-hover: #00b894;
+}
 
+/* NAVBAR GENERAL */
 .nav {
   display: flex;
   justify-content: space-around;
@@ -19,15 +27,7 @@
   color: var(--text-dark);
 }
 
-:root {
-  --dark-bg: #1f1f1f;
-  --light-bg: #ffffff;
-  --text-light: #ffffff;
-  --text-dark: #000000;
-  --primary-hover: #00b894;
-}
-
-/* Logo */
+/* LOGO */
 .container-logo {
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@
   margin-left: 0.5rem;
 }
 
-/* Nav List */
+/* NAV LIST */
 .nav-list {
   list-style: none;
   display: flex;
@@ -74,6 +74,27 @@
   transition: all 0.3s ease-in-out;
 }
 
+.nav-list li {
+  cursor: pointer;
+}
+
+/* ESTILO PARA BOTONES EN VEZ DE LINKS */
+.nav-btn {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.nav-btn:hover {
+  color: var(--primary-hover);
+}
+
+/* SI AÚN USAS ALGÚN LINK */
 .nav-list li a {
   color: inherit;
   text-decoration: none;
@@ -85,7 +106,7 @@
   color: var(--primary-hover);
 }
 
-/* Theme Toggle Button */
+/* THEME TOGGLE BUTTON */
 .theme-toggle {
   padding: 0.4rem;
   border: none;
@@ -112,7 +133,7 @@
   background: linear-gradient(145deg, #f6d365, #fda085);
 }
 
-/* Burger Menu */
+/* BURGER MENU */
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -120,8 +141,11 @@
   transition: color 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* RESPONSIVE NAV */
+@media (max-width: 802px) {
+  .nav{
+    justify-content: space-between;
+  }
   .nav-list {
     position: absolute;
     top: 100%;
@@ -160,7 +184,7 @@
   }
 }
 
-/* Mobile */
+/* MOBILE EXTRA SMALL */
 @media (max-width: 500px) {
   .logo-title {
     font-size: 1rem;
