@@ -44,33 +44,29 @@
   padding: 0 1rem;
 }
 
-/* Cards en modo oscuro */
+/* Cards */
+.proyecto-card.dark,
+.proyecto-card.light {
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid;
+}
+
 .proyecto-card.dark {
   background: linear-gradient(145deg, #1e1e1e, #121212);
-  padding: 2rem;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #1f1f1f;
+  border-color: #1f1f1f;
 }
 
-/* Cards en modo claro */
 .proyecto-card.light {
   background: linear-gradient(145deg, #ffffff, #e0e0e0);
-  padding: 2rem;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #d1d1d1;
+  border-color: #d1d1d1;
 }
 
-/* Hover de Cards */
 .proyecto-card:hover {
   transform: translateY(-10px) scale(1.01);
   box-shadow: 0 12px 35px rgba(0, 223, 154, 0.2);
@@ -90,12 +86,10 @@
   font-size: 1rem;
 }
 
-/* Texto en modo oscuro */
 .proyectos.dark .proyecto-card p {
   color: #ccc;
 }
 
-/* Texto en modo claro */
 .proyectos.light .proyecto-card p {
   color: #333;
 }
@@ -106,7 +100,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  cursor:context-menu;
+  cursor: context-menu;
 }
 
 .tech-tag {
@@ -128,42 +122,40 @@
   color: #000;
 }
 
-.proyectos.light .tech-tag:hover {
-  background-color: #00df9a;
-  color: #000;
-}
-
 /* Imagen de los proyectos */
 .proyecto-img {
   width: 100%;
-  height: 200px; /* Asegúrate de que la imagen tenga una altura definida */
+  height: 160px;
   object-fit: cover;
   border-radius: 12px;
   margin-top: 1rem;
   box-shadow: 0 0 15px rgba(0, 223, 154, 0.15);
-  display: block; /* Asegura que la imagen se muestre como un bloque */
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.proyecto-img:hover {
+  transform: scale(1.05);
 }
 
 /* Link "Ver más" */
 .ver-mas {
   display: inline-block;
   margin-top: 1.5rem;
-  color: #b6b6b6;
+  color: #000000;
   font-weight: 600;
   text-decoration: none;
+  font-size: 1rem;
   transition: color 0.2s;
-}
-
-.proyectos.light .ver-mas {
-  color: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border: 2px solid #00df9a;
+  border-radius: 30px;
+  text-align: center;
 }
 
 .ver-mas:hover {
-  color: #00c785;
-}
-
-.proyectos.light .ver-mas:hover {
-  color: #00c785;
+  background-color: #00df9a;
+  color: #fff;
 }
 
 /* Carrusel y vista móvil */
@@ -173,6 +165,14 @@
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.proyecto-card.dark .ver-mas{
+  color: white;
+}
+
+.proyecto-card.dark .ver-mas:hover{
+  color: #000;
 }
 
 .carousel {
@@ -192,22 +192,120 @@
     display: block;
   }
 
-  /* Ajustar el alto de la imagen en dispositivos móviles */
   .proyecto-img {
-    height: 150px; /* Reducir el tamaño de las imágenes en pantallas pequeñas */
+    height: 140px;
   }
 }
 
 @media (min-width: 769px) {
-
-
   .proyectos-grid {
     display: grid;
   }
 
-  /* Asegurarse de que las imágenes en pantallas grandes sean visibles */
   .proyecto-img {
-    height: 200px; /* Especificar la altura en pantallas grandes */
-    object-fit: cover; /* Garantiza que la imagen se ajuste correctamente */
+    height: 160px;
   }
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.modal-overlay.dark {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-overlay.light {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content .ver-mas{
+  color: white;
+}
+
+.modal-content .ver-mas:hover{
+  color: #000;
+}
+
+.modal-overlay.dark .modal-content {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.modal-overlay.light .modal-content {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Imágenes dentro del modal */
+.modal-content img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 1rem 0;
+  box-shadow: 0 0 10px rgba(0, 223, 154, 0.3);
+}
+
+/* Botón de cierre */
+.btn-close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-overlay.dark .btn-close-modal {
+  color: #fff;
+}
+
+.modal-overlay.light .btn-close-modal {
+  color: #333;
+}
+
+/* Botón "Ver Detalles" actualizado */
+.btn-open-modal {
+  background-color: #00df9a;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+  align-self: center;
+  box-shadow: 0 5px 20px rgba(0, 223, 154, 0.2);
+}
+
+.btn-open-modal:hover {
+  background-color: #00c785;
+  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.4);
+  transform: translateY(-2px);
 }
