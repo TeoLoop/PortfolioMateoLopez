@@ -24,13 +24,13 @@ body.light .hero {
   margin: 0;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--color-button);
+  color: var(--color-primary-dark);
   font-weight: bold;
 }
 
 /* Ajustes para el modo claro */
 body.light .hero-title {
-  color: var(--color-button-hover);
+  color: var(--color-primary-light);
 }
 
 .hero-subtitle {
@@ -55,7 +55,7 @@ body.light .hero-p {
 /* Hero button styles */
 .hero-button {
   padding: 0.8rem 1.5rem;
-  background-color: var(--color-button);
+  background-color: var(--color-primary-dark);
   color: var(--color-text-light);
   border-radius: 8px;
   font-weight: bold;
@@ -67,12 +67,15 @@ body.light .hero-p {
 
 /* Ajustes para el modo claro */
 body.light .hero-button {
-  background-color: var(--color-button-hover);
+  background-color: var(--color-primary-light);
+}
+body.light .hero-button:hover{
+  background-color: var(--color-primary-light-hover);
 }
 
 /* Hover state for the button */
 .hero-button:hover {
-  background-color: var(--color-button-hover);
+  background-color: var(--color-primary-dark-hover);
 }
 
 /* Responsiveness */

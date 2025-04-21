@@ -1,16 +1,21 @@
 :root {
-  /* NavBar */
-  
+  --color-primary-dark: #1dbf73;             /* Verde moderno tipo Tailwind */
+  --color-primary-dark-hover: #17a864;
+  --color-primary-light: #20d77c;
+  --color-primary-light-hover: #1abe6d;
+
+  --color-success: #28c76f;                  /* Se mantiene */
+  --color-success-text: #ffffff;
+
+  /* Dark Theme */
   --color-dark-bg: #0d0d0d;
-  --color-light-bg: #f5f5f5;
   --color-text-dark: #f0f0f0;
-  --color-text-light: #000;
   --color-border-dark: #ccc;
+
+/* Light Theme */
+  --color-light-bg: #f5f5f5;
+  --color-text-light: #000;
   --color-border-light: #aaa;
-  --color-button: #00df9a;
-  --color-button-hover: #00b87f;
-  --color-success: #00b87f;
-  --color-success-text: #000;
 
   /* Variables para el footer */
   --color-footer-dark-bg: #0d0d0d;
@@ -61,7 +66,7 @@ body.light {
 /* Modo Oscuro */
 body.dark {
   --loader-bg: var(--color-dark-bg); 
-  --loader-color: var(--color-button); 
+  --loader-color: var(--color-primary-dark); 
   background-color: var(--color-dark-bg); 
   color: var(--color-text-dark); 
 }

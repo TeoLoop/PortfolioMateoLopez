@@ -12,7 +12,7 @@
   margin-bottom: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--color-button);
+  color: var(--color-primary-dark);
 }
 
 /* Modo Oscuro */
@@ -61,11 +61,13 @@
 .proyecto-card.dark {
   background: linear-gradient(145deg, #1e1e1e, #121212);
   border-color: #1f1f1f;
+  color: var(--color-primary-dark);
 }
 
 .proyecto-card.light {
   background: linear-gradient(145deg, #ffffff, #e0e0e0);
   border-color: #d1d1d1;
+  color: var(--color-primary-light);
 }
 
 .proyecto-card:hover {
@@ -76,7 +78,7 @@
 .proyecto-card h3 {
   margin-top: 0;
   font-size: 1.6rem;
-  color: var(--color-button);
+  
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -124,16 +126,16 @@
 }
 
 .proyectos.dark .tech-tag:hover {
-  background-color: var(--color-button);
+  background-color: var(--color-primary-dark);
 }
 
 .proyectos.light .tech-tag:hover {
-  background-color: var(--color-button);
+  background-color: var(--color-primary-dark);
   color: var(--color-light-bg);
 }
 
 .tech-tag:hover {
-  background-color: var(--color-button);
+  background-color: var(--color-primary-dark);
   color: var(--color-light-bg);
 }
 
@@ -163,13 +165,12 @@
   font-size: 1rem;
   transition: color 0.2s;
   padding: 0.5rem 1rem;
-  border: 2px solid var(--color-button);
   border-radius: 30px;
   text-align: center;
 }
 
 .ver-mas:hover {
-  background-color: var(--color-button);
+  background-color: var(--color-primary-dark);
   color: var(--color-light-bg);
 }
 
@@ -232,11 +233,25 @@
 }
 
 .modal-overlay.dark .ver-mas {
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
+  background-color: var(--color-primary-dark);
+  transition: all .3s ease;
 }
 
 .modal-overlay.dark .ver-mas:hover {
   color: var(--color-text-light);
+  background-color: var(--color-primary-dark-hover);
+}
+
+.modal-overlay.light .ver-mas {
+  color: var(--color-text-light);
+  background-color: var(--color-primary-light);
+  transition: all .3s ease;
+}
+
+.modal-overlay.light .ver-mas:hover {
+  color: var(--color-text-dark);
+  background-color: var(--color-primary-light-hover);
 }
 
 .modal-overlay.dark .modal-content {
@@ -290,7 +305,7 @@
 
 /* Botón "Ver Detalles" actualizado */
 .btn-open-modal {
-  background-color: var(--color-button);
+  background-color: var(--color-primary-dark);
   color: var(--color-text-light);
   border: none;
   padding: 0.6rem 1.2rem;
@@ -304,10 +319,18 @@
   box-shadow: 0 5px 20px rgba(0, 223, 154, 0.2);
 }
 
+.proyecto-card.light .btn-open-modal{
+  background-color: var(--color-primary-light);
+}
+
 .btn-open-modal:hover {
-  background-color: var(--color-button-hover);
+  background-color: var(--color-primary-dark-hover);
   box-shadow: 0 8px 25px rgba(0, 223, 154, 0.4);
   transform: translateY(-2px);
+}
+
+.proyecto-card.light .btn-open-modal:hover{
+  background-color: var(--color-primary-light-hover);
 }
 
 /* Loader */
@@ -324,14 +347,3 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Footer */
-.footer {
-  background-color: var(--color-footer-dark-bg);
-  color: var(--color-footer-text-dark);
-  padding: 2rem;
-  text-align: center;
-}
-
-.footer .icon {
-  color: var(--color-footer-icon);
-}

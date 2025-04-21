@@ -21,7 +21,7 @@
     font-size: 1.8rem;
     margin: 2rem 0 1.5rem;
     color: var(--accent-color);
-    border-left: 5px solid var(--accent-color);
+    border-left: 5px solid var(--color-primary);
     padding-left: 1rem;
   }
   
@@ -36,7 +36,7 @@
     gap: 3rem;
     position: relative;
     padding-left: 2rem;
-    border-left: 3px solid var(--accent-color);
+    border-left: 3px solid var(--color-primary);
     flex-wrap: wrap; /* Para que se acomode en pantallas pequeñas */
   }
   
@@ -82,7 +82,7 @@
   .timeline-item .place {
     font-weight: bold;
     display: block;
-    color: var(--accent-color);
+    color: var(--color-primary);
   }
   
   .timeline-item .date {
@@ -98,7 +98,7 @@
     --text-color: #111;
     --card-bg: #fff;
     --text-secondary: #666;
-    --accent-color: #007bff;
+    --color-primary: #00e03f;
   }
   
   .dark-theme {
@@ -106,7 +106,7 @@
     --text-color: #eee;
     --card-bg: #1e1e1e;
     --text-secondary: #bbb;
-    --accent-color: #00bcd4;
+    --color-primary: #00ea89;
   }
   
   .roadmap-page.light-theme,

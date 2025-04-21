@@ -35,8 +35,13 @@
 
 /* Hover de los iconos */
 .social-icons a:hover {
-  color: var(--color-footer-icon);
+  color: var(--color-primary-dark-hover);
 }
+
+.footer.light .social-icons a:hover {
+  color: var(--color-primary-light-hover);
+}
+
 
 /* Estilo para el botón de volver arriba */
 .scroll-top-btn {
@@ -48,23 +53,8 @@
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Hover para el botón */
-.scroll-top-btn:hover {
-  transform: translateY(-5px);
-  color: var(--color-footer-icon);
-}
 
 /* Estilo de los iconos en modo claro */
 .footer.light .social-icons a {
   color: var(--color-footer-text-light); /* Cambiar color de los iconos en modo claro */
-}
-
-/* Hover de los iconos en modo claro */
-.footer.light .social-icons a:hover {
-  color: var(--color-footer-icon);
-}
-
-/* Estilo para el botón de volver arriba en modo claro */
-.footer.light .scroll-top-btn {
-  color: var(--color-footer-text-light); /* Color para el botón en modo claro */
 }

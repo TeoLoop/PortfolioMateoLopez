@@ -4,7 +4,6 @@
   --light-bg: #ffffff;
   --text-light: #ffffff;
   --text-dark: #000000;
-  --primary-hover: #00b894;
 }
 
 /* NAVBAR GENERAL */
@@ -91,7 +90,11 @@
 }
 
 .nav-btn:hover {
-  color: var(--primary-hover);
+  color: var(--color-primary-dark-hover);
+}
+
+.nav.light .nav-btn:hover{
+  color: var(--color-primary-light-hover);
 }
 
 /* SI AÚN USAS ALGÚN LINK */
@@ -103,8 +106,13 @@
 }
 
 .nav-list li a:hover {
-  color: var(--primary-hover);
+  color: var(--color-primary-dark-hover);
 }
+
+.nav.light a:hover{
+  color: var(--color-primary-light-hover);
+}
+
 
 /* THEME TOGGLE BUTTON */
 .theme-toggle {
