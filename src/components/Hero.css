@@ -3,9 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;  /* centra verticalmente */
-  background-color: #121212;
-  color: #f0f0f0;
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-dark);
   height: 60vh;
+}
+
+/* Ajustes para el modo claro */
+body.light .hero {
+  background-color: var(--color-light-bg);
+  color: var(--color-text-light);
 }
 
 .content {
@@ -18,8 +24,13 @@
   margin: 0;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #00df9a;
+  color: var(--color-button);
   font-weight: bold;
+}
+
+/* Ajustes para el modo claro */
+body.light .hero-title {
+  color: var(--color-button-hover);
 }
 
 .hero-subtitle {
@@ -36,10 +47,16 @@
   line-height: 1.6;
 }
 
+/* Ajustes para el modo claro */
+body.light .hero-p {
+  color: var(--color-text-light);
+}
+
+/* Hero button styles */
 .hero-button {
   padding: 0.8rem 1.5rem;
-  background-color: #00df9a;
-  color: #000;
+  background-color: var(--color-button);
+  color: var(--color-text-light);
   border-radius: 8px;
   font-weight: bold;
   font-size: 1rem;
@@ -48,8 +65,14 @@
   box-shadow: 0 4px 15px rgba(0, 223, 154, 0.3);
 }
 
+/* Ajustes para el modo claro */
+body.light .hero-button {
+  background-color: var(--color-button-hover);
+}
+
+/* Hover state for the button */
 .hero-button:hover {
-  background-color: #00c785;
+  background-color: var(--color-button-hover);
 }
 
 /* Responsiveness */

@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #00df9a;
+  background-color: var(--color-button); /* Usando la variable del botón */
   border: none;
   border-radius: 50%;
   padding: 10px;
@@ -25,19 +25,19 @@
 .scroll-top-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  color: #000; /* Color del icono cuando se pasa el mouse */
+  color: var(--color-text-light); /* Usando el color de texto claro cuando se pasa el mouse */
   opacity: 1;
 }
 
 /* Estilos para el modo oscuro */
 .scroll-top-btn.dark {
-  background-color: #00df9a;
+  background-color: var(--color-button); /* Usando la variable del botón */
   color: white;
 }
 
 /* Estilos para el modo claro */
 .scroll-top-btn.light {
-  background-color: #00df9a;
+  background-color: var(--color-button); /* Usando la variable del botón */
   color: white;
 }
 

@@ -7,17 +7,16 @@
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
 }
 
-
 /* Modo Oscuro */
 .footer.dark {
-  background-color: #0d0d0d;
-  color: #f0f0f0;
+  background-color: var(--color-footer-dark-bg);
+  color: var(--color-footer-text-dark);
 }
 
 /* Modo Claro */
 .footer.light {
-  background-color: #f5f5f5;
-  color: #000;
+  background-color: var(--color-footer-light-bg);
+  color: var(--color-footer-text-light);
 }
 
 /* Estilo de los iconos en ambos modos */
@@ -36,7 +35,7 @@
 
 /* Hover de los iconos */
 .social-icons a:hover {
-  color: #00df9a;
+  color: var(--color-footer-icon);
 }
 
 /* Estilo para el botón de volver arriba */
@@ -52,20 +51,20 @@
 /* Hover para el botón */
 .scroll-top-btn:hover {
   transform: translateY(-5px);
-  color: #00df9a;
+  color: var(--color-footer-icon);
 }
 
 /* Estilo de los iconos en modo claro */
 .footer.light .social-icons a {
-  color: #000; /* Cambiar color de los iconos en modo claro */
+  color: var(--color-footer-text-light); /* Cambiar color de los iconos en modo claro */
 }
 
 /* Hover de los iconos en modo claro */
 .footer.light .social-icons a:hover {
-  color: #00df9a;
+  color: var(--color-footer-icon);
 }
 
 /* Estilo para el botón de volver arriba en modo claro */
 .footer.light .scroll-top-btn {
-  color: #000; /* Color para el botón en modo claro */
+  color: var(--color-footer-text-light); /* Color para el botón en modo claro */
 }
