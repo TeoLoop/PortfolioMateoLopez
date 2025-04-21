@@ -1,0 +1,70 @@
+.techs-container {
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .techs-scroll-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .techs-icons {
+    display: flex;
+    gap: 60px;
+    animation: scrollTechs 30s linear infinite;
+    min-width: max-content;
+  }
+  
+  .tech-icon {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tech-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .tech-icon p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Animación de desplazamiento continuo */
+  @keyframes scrollTechs {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Tema claro */
+  .light-theme {
+    background-color: white;
+    color: black;
+  }
+  
+  .light-theme .tech-icon {
+    color: black;
+  }
+  
+  /* Tema oscuro */
+  .dark-theme {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .dark-theme .tech-icon {
+    color: white;
+  }
+  

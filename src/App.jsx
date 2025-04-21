@@ -3,6 +3,8 @@ import { Home } from './pages/Home';
 import { useTheme } from './context/ThemeContext';
 import { useEffect, useState } from 'react';
 import Loader from './components/Loader'; // Asegurate de tener este archivo creado
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const { theme } = useTheme();
