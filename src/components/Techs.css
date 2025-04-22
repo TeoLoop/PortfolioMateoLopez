@@ -78,7 +78,7 @@
 
 /* Tema oscuro */
 .dark-theme {
-    background-color: #121212;
+    background-color: var(--color-dark-bg);
     color: white;
 }
 

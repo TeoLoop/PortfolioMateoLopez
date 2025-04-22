@@ -8,7 +8,7 @@
   --color-success-text: #ffffff;
 
   /* Dark Theme */
-  --color-dark-bg: #0d0d0d;
+  --color-dark-bg: #0d0d0d9b;
   --color-text-dark: #f0f0f0;
   --color-border-dark: #ccc;
 
@@ -26,7 +26,7 @@
 
   /* Loader */
   --loader-bg: #f5f5f5;
-  --loader-color: #1a1a1a;
+  --loader-color: #1f1f1f;
 }
 
 .montserrat {
@@ -43,7 +43,6 @@ html {
 body {
   margin: 0;
   font-family: montserrat;
-  background-color: var(--color-dark-bg); 
   color: var(--color-text-dark); 
 }
 
@@ -67,6 +66,6 @@ body.light {
 body.dark {
   --loader-bg: var(--color-dark-bg); 
   --loader-color: var(--color-primary-dark); 
-  background-color: var(--color-dark-bg); 
+  background-color: #121212; 
   color: var(--color-text-dark); 
 }

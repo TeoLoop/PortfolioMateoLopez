@@ -5,6 +5,7 @@
   position: relative;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
+  background-color: var(--color-footer-dark-bg);
 }
 
 /* Modo Oscuro */
