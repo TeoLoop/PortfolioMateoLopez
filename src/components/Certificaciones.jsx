@@ -4,7 +4,7 @@ import './Certificaciones.css';
 // Importación de la imagen
 import desarrolloWebImage from '../assets/desarrolloWeb.png';
 import desarrolloBD from '../assets/desarrolloBD.png';
-import desarrolladorJava from '../assets/desarrolladorJava.png';
+import desarrolladorJava from '../assets/DesarrolladorJava.png';
 
 // Array de certificaciones (usando la imagen importada)
 const certificaciones = [
@@ -81,7 +81,7 @@ export const Certificaciones = () => {
           </div>
         </div>
       )}
-      
+
     </section>
   );
 };
