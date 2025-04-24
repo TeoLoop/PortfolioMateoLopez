@@ -4,6 +4,7 @@ import './Certificaciones.css';
 // Importación de la imagen
 import desarrolloWebImage from '../assets/desarrolloWeb.png';
 import desarrolloBD from '../assets/desarrolloBD.png';
+import desarrolladorJava from '../assets/desarrolladorJava.png';
 
 // Array de certificaciones (usando la imagen importada)
 const certificaciones = [
@@ -21,7 +22,13 @@ const certificaciones = [
     link: 'https://www.linkedin.com/learning/certificates/ab18d5578ea20c9b4d82654bc3055548664d537d69310900bbfb6d4882eeeebc?u=262407930',
     imagen: desarrolloBD,  // Usando la imagen importada
   },
-  // Puedes agregar más certificaciones y usar la imagen importada aquí
+  {
+    titulo: 'Desarrollador Backend en Java',
+    lugar: 'Linkedin Learning',
+    fecha: 'Enero 2025',
+    link: 'https://www.linkedin.com/in/lopezmateo/details/certifications/1745467989803/single-media-viewer/?profileId=ACoAACM8HcEB1i-lBh7r2Xs7qdghBuHLbPMpEE0',
+    imagen: desarrolladorJava,  // Usando la imagen importada
+  }
 ];
 
 export const Certificaciones = () => {
