@@ -81,6 +81,7 @@ export const Certificaciones = () => {
           </div>
         </div>
       )}
+      
     </section>
   );
 };
