@@ -8,9 +8,10 @@
   --color-success-text: #ffffff;
 
   /* Dark Theme */
-  --color-dark-bg: #0d0d0d9b;
+  --color-dark-bg: #12204452;
   --color-text-dark: #f0f0f0;
   --color-border-dark: #ccc;
+  --color-card-dark: #212f4f;
 
 /* Light Theme */
   --color-light-bg: #f5f5f5;
@@ -18,7 +19,7 @@
   --color-border-light: #aaa;
 
   /* Variables para el footer */
-  --color-footer-dark-bg: #0d0d0d;
+  --color-footer-dark-bg: #050a15;
   --color-footer-light-bg: #f5f5f5;
   --color-footer-text-dark: #f0f0f0;
   --color-footer-text-light: #000;

@@ -63,7 +63,7 @@
 }
 
 .timeline-item .timeline-content {
-  background-color: var(--card-bg);
+  background: linear-gradient(145deg, var(--color-card-dark), #181b28);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -101,7 +101,7 @@
 
 .dark-theme {
   --text-color: #eee;
-  --card-bg: #1e1e1e;
+  --card-bg: #12204452;
   --text-secondary: #bbb;
   --color-primary: #1dbf73;
 }
