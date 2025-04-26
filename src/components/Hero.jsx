@@ -19,8 +19,8 @@ export const Hero = () => {
       >
         <h2 className="hero-title">
           <Typewriter
-            words={['HOLA, MI NOMBRE ES MATEO LOPEZ', 'HI, MY NAME IS MATEO LOPEZ', 'OLÁ, MEU NOME É MATEO LOPEZ']}
-            loop={2}
+            words={['HOLA, MI NOMBRE ES MATEO LOPEZ', 'HI, MY NAME IS MATEO LOPEZ', 'OLÁ, MEU NOME É MATEO LOPEZ','HOLA, MI NOMBRE ES MATEO LOPEZ']}
+            loop={1}
             cursor
             cursorStyle='|'
             typeSpeed={120}
