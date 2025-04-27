@@ -24,7 +24,7 @@ export const Proyectos = () => {
   const proyectoPrincipal = {
     title: 'NomadaX - Plataforma de Reservas en Construcción',
     description: 'NomadaX es una plataforma emergente de reservas de alojamientos temporales, inspirada en la experiencia de Airbnb. Este proyecto académico está en pleno desarrollo y utiliza tecnologías modernas como React para el frontend, Spring Boot para el backend y MySQL para la base de datos. Con Docker Compose, puedes probar fácilmente la aplicación de manera local y experimentar su funcionamiento completo. El panel de administración permite gestionar hoteles de manera sencilla y eficiente. ¡Acompañanos en este proceso de construcción y sé parte de la evolución de NomadaX!',
-    techs: 'React, Java, Spring Boot, MySQL, Docker Compose',
+    techs: 'React, Java, Spring Boot, MySQL, Docker Compose, Git',
     imageUrls: [
       nomadax1,
       nomadax2,

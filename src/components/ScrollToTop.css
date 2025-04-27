@@ -1,8 +1,8 @@
 .scroll-top-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: var(--color-primary-dark); /* Usando la variable del botón */
+  right: 32px;
+  background-color: transparent;
   border: none;
   border-radius: 50%;
   padding: 10px;
@@ -31,7 +31,7 @@
 
 /* Estilos para el modo oscuro */
 .scroll-top-btn.dark {
-  background-color: var(--color-primary-dark); /* Usando la variable del botón */
+  background-color: transparent;
   color: white;
 }
 

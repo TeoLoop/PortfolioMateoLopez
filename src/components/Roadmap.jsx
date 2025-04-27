@@ -6,6 +6,7 @@ import { Certificaciones } from '../components/Certificaciones';
 import ScrollToTop from '../components/ScrollToTop';
 import { motion } from 'framer-motion';
 import ParticlesBackground from '../components/ParticlesBackground';
+import MouseLight from '../components/MouseLight';
 import './Roadmap.css';
 
 const roadmapData = [
@@ -86,6 +87,7 @@ const Roadmap = () => {
     return (
         <div className={`roadmap-page ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
             <ParticlesBackground />
+            <MouseLight/>
             <Navbar />
             <section className="roadmap-container">
                 <h2 className="roadmap-title">EXPERIENCIA</h2>
