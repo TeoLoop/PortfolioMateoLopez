@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaArrowUp, FaWhatsapp } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';  // Importamos el hook
 
 export const Footer = () => {
@@ -29,6 +29,9 @@ export const Footer = () => {
         </a>
         <a href="mailto:matelopez2830@gmail.com">
           <FaEnvelope />
+        </a>
+        <a href="https://wa.me/+59895744084" target="_blank" rel="noreferrer">
+          <FaWhatsapp />
         </a>
       </div>
       {/* Botón de flecha para volver arriba */}

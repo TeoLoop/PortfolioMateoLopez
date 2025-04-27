@@ -25,10 +25,6 @@ export const Home = () => {
       <Footer />
       <ScrollToTop theme={theme} /> {/* Pasa el tema al componente ScrollToTop */}
       
-      {/* Botón de WhatsApp flotante */}
-      <a href="https://wa.me/+59895744084" target="_blank" className="whatsapp-btn" aria-label="Contacta por WhatsApp">
-        <img src="https://img.icons8.com/?size=100&id=MW3L3LMSpawR&format=png&color=000000" alt="WhatsApp" className="whatsapp-icon" />
-      </a>
     </>
   );
 };
