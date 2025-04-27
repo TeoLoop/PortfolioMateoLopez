@@ -8,6 +8,7 @@ import { useTheme } from '../context/ThemeContext';
 import ScrollToTop from '../components/ScrollToTop'; // Importa el componente ScrollToTop
 import Techs from '../components/Techs';
 import ParticlesBackground from '../components/ParticlesBackground';
+import MouseLight from '../components/MouseLight';
 
 
 export const Home = () => {
@@ -16,6 +17,7 @@ export const Home = () => {
   return (
     <>
       <ParticlesBackground />
+      <MouseLight/>
       <Navbar />
       <Hero />
       <Proyectos />
