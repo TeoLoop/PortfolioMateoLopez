@@ -32,7 +32,6 @@ function App() {
       ) : (
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* Agregar el roadmap a una nueva ruta */}
           <Route path='/experiencia' element={<Experiencia />} />
         </Routes>
       )}

@@ -11,7 +11,7 @@ import ParticlesBackground from '../components/ParticlesBackground';
 import MouseLight from '../components/MouseLight';
 
 export const Home = () => {
-  const { theme } = useTheme(); // Obtener el tema actual
+  const { theme } = useTheme(); 
 
   return (
     <>
@@ -23,7 +23,7 @@ export const Home = () => {
       <Techs />
       <Contact />
       <Footer />
-      <ScrollToTop theme={theme} /> {/* Pasa el tema al componente ScrollToTop */}
+      <ScrollToTop theme={theme} />
       
     </>
   );
