@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Certificaciones.css';
+import '../styles/Certificaciones.css';
 
 // Importación de la imagen
 import desarrolloWebImage from '../assets/desarrolloWeb.png';

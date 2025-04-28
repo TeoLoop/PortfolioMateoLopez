@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import '../styles/Footer.css';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaArrowUp, FaWhatsapp } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';  // Importamos el hook
 

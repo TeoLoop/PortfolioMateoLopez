@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaReact, FaNodeJs, FaJava, FaHtml5, FaCss3Alt, FaGithub, FaTools, FaLinux, FaWindows, FaDatabase } from 'react-icons/fa';
 import { SiSpringboot, SiPostman, SiGit, SiBootstrap, SiJira, SiNotion, SiCplusplus } from 'react-icons/si';
-import './Techs.css';
+import '../styles/Techs.css';
 import { useTheme } from '../context/ThemeContext';
 
 const techData = [

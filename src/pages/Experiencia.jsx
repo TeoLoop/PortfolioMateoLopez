@@ -7,7 +7,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import { motion } from 'framer-motion';
 import ParticlesBackground from '../components/ParticlesBackground';
 import MouseLight from '../components/MouseLight';
-import './Roadmap.css';
+import '../styles/Experiencia.css';
 
 const roadmapData = [
     {
@@ -61,7 +61,7 @@ const roadmapData = [
     }
 ];
 
-const Roadmap = () => {
+const Experiencia = () => {
     const { theme } = useTheme();
   
     const [timelinePosition, setTimelinePosition] = useState('alternate');
@@ -148,4 +148,4 @@ const Roadmap = () => {
     );
 };
 
-export default Roadmap;
+export default Experiencia; 

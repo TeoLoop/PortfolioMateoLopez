@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import Loader from './components/Loader'; // Asegúrate de tener este archivo creado
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Roadmap from './components/Roadmap'; // Importar el componente
-
+import Experiencia from './pages/Experiencia';  
+// Importar el componente
 function App() {
   const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +33,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           {/* Agregar el roadmap a una nueva ruta */}
-          <Route path='/experiencia' element={<Roadmap />} />
+          <Route path='/experiencia' element={<Experiencia />} />
         </Routes>
       )}
     </div>

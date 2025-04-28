@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import './Navbar.css';
+import '../styles/Navbar.css';  
 import logo from '../assets/FP.jpg';
 import verified from '../assets/verificada-48.png';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';

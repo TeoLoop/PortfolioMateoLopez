@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useTheme } from '../context/ThemeContext';
-import './Contact.css';
+import '../styles/Contact.css';
 
 export const Contact = () => {
   const [state, handleSubmit] = useForm("xovebqze");

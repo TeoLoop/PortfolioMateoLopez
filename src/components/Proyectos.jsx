@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './Proyectos.css';
+import '../styles/Proyectos.css';
 import { useTheme } from '../context/ThemeContext';
 import { FaTimes, FaGithub } from 'react-icons/fa';
 import nomadax1 from '../assets/nomadax1.png';

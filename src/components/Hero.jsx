@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import { FaRocket } from 'react-icons/fa'; // Si decides agregar un ícono
 import { useTheme } from '../context/ThemeContext';  // Ajusta la ruta según donde esté tu contexto
-import './Hero.css';
+import '../styles/Hero.css';
 
 export const Hero = () => {
   const { theme } = useTheme();  // Obtén el tema actual desde el contexto

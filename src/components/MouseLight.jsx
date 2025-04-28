@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './MouseLight.css'; // ahora creamos este CSS
+import '../styles/MouseLight.css';  // ahora creamos este CSS
 
 const MouseLight = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
