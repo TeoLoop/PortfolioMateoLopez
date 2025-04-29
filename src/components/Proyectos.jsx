@@ -3,7 +3,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/Proyectos.css';
 import { useTheme } from '../context/ThemeContext';
-import { FaTimes, FaGithub } from 'react-icons/fa';
+import { FaTimes, FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 import nomadax1 from '../assets/nomadax1.png';
 import nomadax2 from '../assets/nomadax2.png';
 import nomadax3 from '../assets/nomadax3.png';
@@ -34,7 +35,7 @@ export const Proyectos = () => {
       nomadax6,
       nomadax7
     ],
-    link: 'https://github.com/TeoLoop/NomadaX'
+    link: 'https://github.com/TeoLoop/NomadaX',
   };
 
   useEffect(() => {
@@ -65,123 +66,307 @@ export const Proyectos = () => {
   const openModal = (project) => {
     setSelectedProject(project);
     setModalVisible(true);
+    document.body.style.overflow = 'hidden'; // Prevenir scroll cuando el modal está abierto
   };
 
   const closeModal = () => {
     setModalVisible(false);
     setSelectedProject(null);
+    document.body.style.overflow = 'auto'; // Restaurar scroll
+  };
+
+  // Variantes para animaciones de Framer Motion
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  const modalVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 25,
+        stiffness: 300
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.8,
+      transition: {
+        duration: 0.3
+      }
+    }
   };
 
   return (
     <section className={`proyectos ${theme}`} id="proyectos">
-      <h2 className="proyectos-title">Mis Proyectos</h2>
+      <motion.h2 
+        className="proyectos-title"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Mis Proyectos
+      </motion.h2>
 
-      <div className={`proyecto-principal ${theme}`}>
+      <motion.div 
+        className={`proyecto-principal ${theme}`}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         <h3>{proyectoPrincipal.title}</h3>
         <p>{proyectoPrincipal.description}</p>
         <div className="tecnologias">
           {proyectoPrincipal.techs.split(',').map((tec, i) => (
-            <span key={`principal-${i}`} className="tech-tag">
+            <motion.span 
+              key={`principal-${i}`} 
+              className="tech-tag"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <strong>{tec.trim()}</strong>
-            </span>
+            </motion.span>
           ))}
         </div>
         {proyectoPrincipal.imageUrls.length > 0 && (
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            infiniteLoop
-            autoPlay
-            interval={3000}
-            stopOnHover
-            className="carousel"
-          >
-            {proyectoPrincipal.imageUrls.map((img, i) => (
-              <div key={i}>
-                <img src={img} alt={`${proyectoPrincipal.title} - ${i + 1}`} />
-              </div>
-            ))}
-          </Carousel>
+          <div className="carousel-container">
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              infiniteLoop
+              autoPlay
+              interval={3000}
+              stopOnHover
+              className="carousel"
+              showArrows={!isMobile}
+              showIndicators={true}
+              swipeable={true}
+              emulateTouch={true}
+            >
+              {proyectoPrincipal.imageUrls.map((img, i) => (
+                <div key={i} className="carousel-item">
+                  <img src={img} alt={`${proyectoPrincipal.title} - ${i + 1}`} />
+                </div>
+              ))}
+            </Carousel>
+          </div>
         )}
-        <a href={proyectoPrincipal.link} target="_blank" rel="noreferrer" className="ver-mas">
-          <FaGithub /> Ver en GitHub
-        </a>
-      </div>
+        <div className="proyecto-links">
+          <motion.a 
+            href={proyectoPrincipal.link} 
+            target="_blank" 
+            rel="noreferrer" 
+            className="ver-mas github-link"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaGithub /> Código en GitHub
+          </motion.a>
+        </div>
+      </motion.div>
 
       {loading && (
-        <div className="spinner-container">
+        <motion.div 
+          className="spinner-container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <p>Cargando proyectos...</p>
           <div className="spinner"></div>
-        </div>
+        </motion.div>
       )}
 
-      {error && <p className="mensaje-error">No se pudieron cargar los proyectos.</p>}
+      {error && (
+        <motion.p 
+          className="mensaje-error"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          No se pudieron cargar los proyectos.
+        </motion.p>
+      )}
 
       {!loading && !error && (
-        <div className="proyectos-grid">
+        <motion.div 
+          className="proyectos-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {proyectos.map((p) => (
-            <div className={`proyecto-card ${theme}`} key={p.id}>
+            <motion.div 
+              className={`proyecto-card ${theme}`} 
+              key={p.id}
+              variants={itemVariants}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
               <h3>{p.title}</h3>
               <p>{p.description}</p>
               <div className="tecnologias">
-                {p.techs.split(',').map((tec) => (
-                  <span key={`${p.id}-${tec}`} className="tech-tag">
+                {p.techs.split(',').map((tec, i) => (
+                  <motion.span 
+                    key={`${p.id}-${i}`} 
+                    className="tech-tag"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <strong>{tec.trim()}</strong>
-                  </span>
+                  </motion.span>
                 ))}
               </div>
 
               {p.imageUrls && p.imageUrls.length > 0 && (
-                <Carousel showThumbs={false} showStatus={false} infiniteLoop className="carousel">
-                  {p.imageUrls.map((img, i) => (
-                    <div key={i}>
-                      <img src={`https://api-proyectos-k0df.onrender.com${img}`} alt={`${p.title} - ${i + 1}`} />
-                    </div>
-                  ))}
-                </Carousel>
+                <div className="carousel-container">
+                  <Carousel 
+                    showThumbs={false} 
+                    showStatus={false} 
+                    infiniteLoop 
+                    className="carousel"
+                    showArrows={false}
+                    showIndicators={true}
+                    swipeable={true}
+                    emulateTouch={true}
+                  >
+                    {p.imageUrls.map((img, i) => (
+                      <div key={i} className="carousel-item">
+                        <img 
+                          src={`https://api-proyectos-k0df.onrender.com${img}`} 
+                          alt={`${p.title} - ${i + 1}`} 
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
               )}
-              <button className="btn-open-modal" onClick={() => openModal(p)}>
-                Ver más
-              </button>
-            </div>
+              <motion.button 
+                className="btn-open-modal" 
+                onClick={() => openModal(p)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaCode /> Ver más detalles
+              </motion.button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       )}
 
-      {modalVisible && selectedProject && (
-        <div className={`modal-overlay ${theme}`} onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="btn-close-modal" onClick={closeModal}>
-              <FaTimes size={24} />
-            </button>
-            <h3>{selectedProject.title}</h3>
-            <p>{selectedProject.description}</p>
-            <div className="tecnologias">
-              {selectedProject.techs.split(',').map((tec) => (
-                <span key={`${selectedProject.id}-${tec}`} className="tech-tag">
-                  <strong>{tec.trim()}</strong>
-                </span>
-              ))}
-            </div>
-
-            {selectedProject.imageUrls && selectedProject.imageUrls.length > 0 && (
-              <Carousel showThumbs={false} showStatus={false} infiniteLoop className="carousel">
-                {selectedProject.imageUrls.map((img, i) => (
-                  <div key={i}>
-                    <img
-                      src={`https://api-proyectos-k0df.onrender.com${img}`}
-                      alt={`${selectedProject.title} - ${i + 1}`}
-                    />
-                  </div>
+      <AnimatePresence>
+        {modalVisible && selectedProject && (
+          <motion.div 
+            className={`modal-overlay ${theme}`} 
+            onClick={closeModal}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div 
+              className="modal-content" 
+              onClick={(e) => e.stopPropagation()}
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <motion.button 
+                className="btn-close-modal" 
+                onClick={closeModal}
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaTimes size={24} />
+              </motion.button>
+              <h3>{selectedProject.title}</h3>
+              <p>{selectedProject.description}</p>
+              <div className="tecnologias">
+                {selectedProject.techs.split(',').map((tec, i) => (
+                  <motion.span 
+                    key={`${selectedProject.id}-${i}`} 
+                    className="tech-tag"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <strong>{tec.trim()}</strong>
+                  </motion.span>
                 ))}
-              </Carousel>
-            )}
-            <a href={selectedProject.link} target="_blank" rel="noreferrer" className="ver-mas">
-              <FaGithub /> Ver en GitHub
-            </a>
-          </div>
-        </div>
-      )}
+              </div>
+
+              {selectedProject.imageUrls && selectedProject.imageUrls.length > 0 && (
+                <div className="carousel-container">
+                  <Carousel 
+                    showThumbs={false} 
+                    showStatus={false} 
+                    infiniteLoop 
+                    className="carousel"
+                    showArrows={!isMobile}
+                    showIndicators={true}
+                    swipeable={true}
+                    emulateTouch={true}
+                  >
+                    {selectedProject.imageUrls.map((img, i) => (
+                      <div key={i} className="carousel-item">
+                        <img
+                          src={`https://api-proyectos-k0df.onrender.com${img}`}
+                          alt={`${selectedProject.title} - ${i + 1}`}
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
+              )}
+              <div className="proyecto-links">
+                {selectedProject.link && (
+                  <motion.a 
+                    href={selectedProject.link} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="ver-mas github-link"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaGithub /> Código en GitHub
+                  </motion.a>
+                )}
+                {selectedProject.demoLink && (
+                  <motion.a 
+                    href={selectedProject.demoLink} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="ver-mas demo-link"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaExternalLinkAlt /> Ver Demo
+                  </motion.a>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
