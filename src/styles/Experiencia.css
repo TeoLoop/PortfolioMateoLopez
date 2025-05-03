@@ -63,11 +63,17 @@
 }
 
 .timeline-item .timeline-content {
-  background: linear-gradient(145deg, var(--color-card-dark), #181b28);
+  background: linear-gradient(145deg, var(--card-bg), var(--color-card-1));
+  color: var(--text-color);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.light-theme .timeline-item .timeline-content {
+  background: linear-gradient(145deg, var(--card-bg), #fff);
 }
 
 .timeline-item .timeline-content h4 {
@@ -94,14 +100,16 @@
 .light-theme {
   --bg-color: #f9f9f9;
   --text-color: #111;
-  --card-bg: #fff;
+  --card-bg: #dadada;
+  --color-card-1: #fff;
   --text-secondary: #666;
   --color-primary: #20d77c;
 }
 
 .dark-theme {
   --text-color: #eee;
-  --card-bg: #12204452;
+  --card-bg: #122044;
+  --color-card-1: #122044;
   --text-secondary: #bbb;
   --color-primary: #1dbf73;
 }
